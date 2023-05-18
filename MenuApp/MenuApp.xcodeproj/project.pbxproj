@@ -78,12 +78,8 @@
 		F02F087B2A15FB600020E2D2 /* MenuApp */ = {
 			isa = PBXGroup;
 			children = (
-				F02F087C2A15FB600020E2D2 /* AppDelegate.swift */,
-				F02F087E2A15FB600020E2D2 /* SceneDelegate.swift */,
-				F02F08802A15FB600020E2D2 /* ViewController.swift */,
-				F02F08822A15FB600020E2D2 /* Main.storyboard */,
-				F02F08852A15FB610020E2D2 /* Assets.xcassets */,
-				F02F08872A15FB610020E2D2 /* LaunchScreen.storyboard */,
+				F02F08AE2A15FCAF0020E2D2 /* Controller */,
+				F02F08AC2A15FC860020E2D2 /* Resource */,
 				F02F088A2A15FB610020E2D2 /* Info.plist */,
 			);
 			path = MenuApp;
@@ -95,6 +91,34 @@
 				F02F08932A15FB610020E2D2 /* MenuAppTests.swift */,
 			);
 			path = MenuAppTests;
+			sourceTree = "<group>";
+		};
+		F02F08AC2A15FC860020E2D2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F02F08AD2A15FC9A0020E2D2 /* Storyboard */,
+				F02F087C2A15FB600020E2D2 /* AppDelegate.swift */,
+				F02F087E2A15FB600020E2D2 /* SceneDelegate.swift */,
+				F02F08852A15FB610020E2D2 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		F02F08AD2A15FC9A0020E2D2 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				F02F08822A15FB600020E2D2 /* Main.storyboard */,
+				F02F08872A15FB610020E2D2 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		F02F08AE2A15FCAF0020E2D2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F02F08802A15FB600020E2D2 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -346,7 +370,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -421,7 +445,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TMZ97PNGHJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blu.MenuAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,7 +465,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TMZ97PNGHJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.blu.MenuAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
