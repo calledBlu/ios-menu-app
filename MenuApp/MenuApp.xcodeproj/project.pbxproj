@@ -15,6 +15,7 @@
 		F02F08892A15FB610020E2D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F02F08872A15FB610020E2D2 /* LaunchScreen.storyboard */; };
 		F02F08942A15FB610020E2D2 /* MenuAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F08932A15FB610020E2D2 /* MenuAppTests.swift */; };
 		F02F08B32A15FFBE0020E2D2 /* .swiftlin.yml in Resources */ = {isa = PBXBuildFile; fileRef = F02F08B22A15FFBE0020E2D2 /* .swiftlin.yml */; };
+		F0F3BBA92A16147D002DD6C6 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3BBA82A16147D002DD6C6 /* Menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		F02F088F2A15FB610020E2D2 /* MenuAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F02F08932A15FB610020E2D2 /* MenuAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAppTests.swift; sourceTree = "<group>"; };
 		F02F08B22A15FFBE0020E2D2 /* .swiftlin.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlin.yml; sourceTree = "<group>"; };
+		F0F3BBA82A16147D002DD6C6 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		F02F087B2A15FB600020E2D2 /* MenuApp */ = {
 			isa = PBXGroup;
 			children = (
+				F0F3BBA72A160F9D002DD6C6 /* Model */,
 				F02F08AE2A15FCAF0020E2D2 /* Controller */,
 				F02F08AC2A15FC860020E2D2 /* Resource */,
 				F02F088A2A15FB610020E2D2 /* Info.plist */,
@@ -122,6 +125,14 @@
 				F02F08802A15FB600020E2D2 /* ViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0F3BBA72A160F9D002DD6C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0F3BBA82A16147D002DD6C6 /* Menu.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +262,7 @@
 			files = (
 				F02F08812A15FB600020E2D2 /* ViewController.swift in Sources */,
 				F02F087D2A15FB600020E2D2 /* AppDelegate.swift in Sources */,
+				F0F3BBA92A16147D002DD6C6 /* Menu.swift in Sources */,
 				F02F087F2A15FB600020E2D2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
