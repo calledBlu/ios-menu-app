@@ -29,9 +29,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidEnterBackground(_ scene: UIScene) { }
 }
-
-extension SceneDelegate: UINavigationBarDelegate {
-    func position(for bar: UIBarPositioning) -> UIBarPosition {
-        return .topAttached
-    }
-}
