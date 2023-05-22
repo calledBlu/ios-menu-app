@@ -15,7 +15,7 @@ final class PushAlertViewController: UIViewController {
     }
 
     private func configureNavigationBar() {
-        let titleLabel =  NavigationBarTitleLabel(text: ViewCategory.pushAlert.viewTitle)
+        let titleLabel = UILabel(text: ViewCategory.pushAlert.viewTitle)
 
         let leftBarButton = UIBarButtonItem(customView: titleLabel)
         navigationItem.leftBarButtonItems = [leftBarButton]
