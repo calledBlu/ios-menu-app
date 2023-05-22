@@ -15,6 +15,7 @@
 		F02F08892A15FB610020E2D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F02F08872A15FB610020E2D2 /* LaunchScreen.storyboard */; };
 		F02F08942A15FB610020E2D2 /* MenuAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F08932A15FB610020E2D2 /* MenuAppTests.swift */; };
 		F02F08B32A15FFBE0020E2D2 /* .swiftlin.yml in Resources */ = {isa = PBXBuildFile; fileRef = F02F08B22A15FFBE0020E2D2 /* .swiftlin.yml */; };
+		F0B13E232A1B006800617B97 /* MenuCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B13E222A1B006800617B97 /* MenuCalendar.swift */; };
 		F0F3BBA92A16147D002DD6C6 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3BBA82A16147D002DD6C6 /* Menu.swift */; };
 		F0F3BBE42A17CB61002DD6C6 /* NavigationBarTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3BBE32A17CB61002DD6C6 /* NavigationBarTitleLabel.swift */; };
 		F0F3BBE82A17CBB8002DD6C6 /* Extension+UITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3BBE72A17CBB8002DD6C6 /* Extension+UITabBarController.swift */; };
@@ -46,6 +47,7 @@
 		F02F088F2A15FB610020E2D2 /* MenuAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F02F08932A15FB610020E2D2 /* MenuAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAppTests.swift; sourceTree = "<group>"; };
 		F02F08B22A15FFBE0020E2D2 /* .swiftlin.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlin.yml; sourceTree = "<group>"; };
+		F0B13E222A1B006800617B97 /* MenuCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCalendar.swift; sourceTree = "<group>"; };
 		F0F3BBA82A16147D002DD6C6 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		F0F3BBE32A17CB61002DD6C6 /* NavigationBarTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTitleLabel.swift; sourceTree = "<group>"; };
 		F0F3BBE72A17CBB8002DD6C6 /* Extension+UITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITabBarController.swift"; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				F0F3BBA82A16147D002DD6C6 /* Menu.swift */,
 				F0F3BBEF2A17F898002DD6C6 /* ViewCategory.swift */,
+				F0B13E222A1B006800617B97 /* MenuCalendar.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			files = (
 				F0F3BBEA2A17F6AB002DD6C6 /* CalendarViewController.swift in Sources */,
 				F0F3BBE82A17CBB8002DD6C6 /* Extension+UITabBarController.swift in Sources */,
+				F0B13E232A1B006800617B97 /* MenuCalendar.swift in Sources */,
 				F0F3BBEE2A17F6DB002DD6C6 /* PushAlertViewController.swift in Sources */,
 				F02F08812A15FB600020E2D2 /* MenuTabBarController.swift in Sources */,
 				F02F087D2A15FB600020E2D2 /* AppDelegate.swift in Sources */,

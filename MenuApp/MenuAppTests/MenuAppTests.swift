@@ -23,5 +23,4 @@ final class MenuAppTests: XCTestCase {
         self.measure {
         }
     }
-
 }
