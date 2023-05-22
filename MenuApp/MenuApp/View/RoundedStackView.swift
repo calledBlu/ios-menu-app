@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class RoundedStackView: UIStackView {
+class RoundedStackView: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
