@@ -15,7 +15,7 @@ final class CalendarViewController: UIViewController {
     }
 
     private func configureNavigationBar() {
-        let titleLabel =  NavigationBarTitleLabel(text: "주식회사 야곰 식단표")
+        let titleLabel =  NavigationBarTitleLabel(text: ViewCategory.calendar.viewTitle)
 
         let leftBarButton = UIBarButtonItem(customView: titleLabel)
         navigationItem.leftBarButtonItems = [leftBarButton]

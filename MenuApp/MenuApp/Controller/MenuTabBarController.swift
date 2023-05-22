@@ -12,13 +12,13 @@ final class MenuTabBarController: UITabBarController {
         super.viewDidLoad()
 
         viewControllers = [
-            createTabBarItem(tabBarTitle: ViewCategory.list.title,
+            createTabBarItem(tabBarTitle: ViewCategory.list.barTitle,
                              tabBarImage: ViewCategory.list.imageName,
                              viewController: ListViewController()),
-            createTabBarItem(tabBarTitle: ViewCategory.calendar.title,
+            createTabBarItem(tabBarTitle: ViewCategory.calendar.barTitle,
                              tabBarImage: ViewCategory.calendar.imageName,
                              viewController: CalendarViewController()),
-            createTabBarItem(tabBarTitle: ViewCategory.pushAlert.title,
+            createTabBarItem(tabBarTitle: ViewCategory.pushAlert.barTitle,
                              tabBarImage: ViewCategory.pushAlert.imageName,
                              viewController: PushAlertViewController())
         ]

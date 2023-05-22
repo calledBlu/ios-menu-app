@@ -15,7 +15,7 @@ final class ListViewController: UIViewController {
     }
 
     private func configureNavigationBar() {
-        let titleLabel =  NavigationBarTitleLabel(text: "저장된 날짜 리스트")
+        let titleLabel =  NavigationBarTitleLabel(text: ViewCategory.list.viewTitle)
 
         let leftBarButton = UIBarButtonItem(customView: titleLabel)
         navigationItem.leftBarButtonItems = [leftBarButton]
