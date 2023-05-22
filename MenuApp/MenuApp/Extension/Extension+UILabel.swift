@@ -1,13 +1,13 @@
 //
-//  NavigationBarTitleLabel.swift
+//  Extension+UILabel.swift
 //  MenuApp
 //
-//  Created by Blu on 2023/05/20.
+//  Created by Blu on 2023/05/22.
 //
 
 import UIKit
 
-final class NavigationBarTitleLabel: UILabel {
+extension UILabel {
     convenience init(text: String) {
         self.init()
 

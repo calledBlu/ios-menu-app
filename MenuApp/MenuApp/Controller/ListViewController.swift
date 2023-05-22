@@ -15,7 +15,7 @@ final class ListViewController: UIViewController {
     }
 
     private func configureNavigationBar() {
-        let titleLabel =  NavigationBarTitleLabel(text: ViewCategory.list.viewTitle)
+        let titleLabel = UILabel(text: ViewCategory.list.viewTitle)
 
         let leftBarButton = UIBarButtonItem(customView: titleLabel)
         navigationItem.leftBarButtonItems = [leftBarButton]

@@ -26,15 +26,6 @@ final class MenuTabBarController: UITabBarController {
         configureTabBar()
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        var tabFrame = self.tabBar.frame
-        tabFrame.size.height = 85
-        tabFrame.origin.y = self.view.frame.size.height - tabFrame.size.height
-        self.tabBar.frame = tabFrame
-    }
-
     private func configureTabBar() {
         let tabBar = self.tabBar
 
