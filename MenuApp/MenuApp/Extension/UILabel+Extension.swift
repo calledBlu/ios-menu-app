@@ -1,5 +1,5 @@
 //
-//  Extension+UILabel.swift
+//  UILabel+Extension.swift
 //  MenuApp
 //
 //  Created by Blu on 2023/05/22.
