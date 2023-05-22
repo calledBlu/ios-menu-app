@@ -16,6 +16,7 @@
 		F02F08942A15FB610020E2D2 /* MenuAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F08932A15FB610020E2D2 /* MenuAppTests.swift */; };
 		F02F08B32A15FFBE0020E2D2 /* .swiftlin.yml in Resources */ = {isa = PBXBuildFile; fileRef = F02F08B22A15FFBE0020E2D2 /* .swiftlin.yml */; };
 		F0B13E232A1B006800617B97 /* MenuCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B13E222A1B006800617B97 /* MenuCalendar.swift */; };
+		F0B13E252A1B25F900617B97 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B13E242A1B25F900617B97 /* DateProvider.swift */; };
 		F0F3BBA92A16147D002DD6C6 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3BBA82A16147D002DD6C6 /* Menu.swift */; };
 		F0F3BBE42A17CB61002DD6C6 /* NavigationBarTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3BBE32A17CB61002DD6C6 /* NavigationBarTitleLabel.swift */; };
 		F0F3BBE82A17CBB8002DD6C6 /* Extension+UITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3BBE72A17CBB8002DD6C6 /* Extension+UITabBarController.swift */; };
@@ -48,6 +49,7 @@
 		F02F08932A15FB610020E2D2 /* MenuAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAppTests.swift; sourceTree = "<group>"; };
 		F02F08B22A15FFBE0020E2D2 /* .swiftlin.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlin.yml; sourceTree = "<group>"; };
 		F0B13E222A1B006800617B97 /* MenuCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCalendar.swift; sourceTree = "<group>"; };
+		F0B13E242A1B25F900617B97 /* DateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
 		F0F3BBA82A16147D002DD6C6 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		F0F3BBE32A17CB61002DD6C6 /* NavigationBarTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTitleLabel.swift; sourceTree = "<group>"; };
 		F0F3BBE72A17CBB8002DD6C6 /* Extension+UITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITabBarController.swift"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				F0F3BBA82A16147D002DD6C6 /* Menu.swift */,
 				F0F3BBEF2A17F898002DD6C6 /* ViewCategory.swift */,
 				F0B13E222A1B006800617B97 /* MenuCalendar.swift */,
+				F0B13E242A1B25F900617B97 /* DateProvider.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				F0F3BBEC2A17F6D3002DD6C6 /* ListViewController.swift in Sources */,
 				F0F3BBA92A16147D002DD6C6 /* Menu.swift in Sources */,
 				F02F087F2A15FB600020E2D2 /* SceneDelegate.swift in Sources */,
+				F0B13E252A1B25F900617B97 /* DateProvider.swift in Sources */,
 				F0F3BBE42A17CB61002DD6C6 /* NavigationBarTitleLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
