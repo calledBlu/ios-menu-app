@@ -11,7 +11,7 @@ final class DateProvider {
     var menuCalendar = MenuCalendar()
 
     func configureCalendar() {
-        let components = menuCalendar.calendar.dateComponents([.year, .month], from: Date())
+        let components = menuCalendar.calendar.dateComponents([.year, .month], from: menuCalendar.calendarDate)
         guard let newDate = menuCalendar.calendar.date(from: components) else {
             return
         }
