@@ -27,12 +27,12 @@ final class MenuTabBarController: UITabBarController {
     }
 
     private func configureTabBar() {
-        let tabBar = self.tabBar
-
-        tabBar.backgroundColor = .white
-        tabBar.tintColor = .systemBlue
+        tabBar.isTranslucent = false
+        tabBar.tintColor = .init(named: "MainOrange")
+        tabBar.unselectedItemTintColor = .init(named: "SubGray")
         tabBar.layer.borderWidth = 0.2
         tabBar.layer.borderColor = UIColor.gray.cgColor
+        tabBar.layer.backgroundColor = UIColor.white.cgColor
 
         self.selectedIndex = ViewCategory.calendar.rawValue
     }

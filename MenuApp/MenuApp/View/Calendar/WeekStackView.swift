@@ -31,6 +31,7 @@ final class WeekStackView: UIStackView {
             let label = UILabel()
             label.text = weekday
             label.textAlignment = .center
+            label.font = UIFont(name: "Pretendard-SemiBold", size: 14)
 
             if weekday == "일" {
                 label.textColor = .systemRed

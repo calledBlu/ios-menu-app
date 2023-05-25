@@ -21,6 +21,7 @@ final class PushAlertViewController: UIViewController {
 
     private func configureNavigationBar() {
         let titleLabel = UILabel(text: ViewCategory.pushAlert.viewTitle)
+        titleLabel.font = UIFont(name: "Pretendard-Bold", size: 18)
 
         let leftBarButton = UIBarButtonItem(customView: titleLabel)
         navigationItem.leftBarButtonItems = [leftBarButton]
