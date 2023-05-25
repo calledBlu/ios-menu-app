@@ -16,7 +16,7 @@ extension UITabBarController {
         navigationController.tabBarItem.image = UIImage(systemName: tabBarImage)
 
         let navigationBarAppearance = UINavigationBarAppearance()
-        navigationBarAppearance.backgroundColor = .systemBlue
+        navigationBarAppearance.backgroundColor = .init(named: "MainOrange")
         navigationController.navigationBar.standardAppearance = navigationBarAppearance
         navigationController.navigationBar.scrollEdgeAppearance = navigationBarAppearance
         navigationController.view.backgroundColor = .white

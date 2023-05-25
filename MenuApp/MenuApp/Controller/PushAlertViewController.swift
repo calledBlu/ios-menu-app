@@ -8,11 +8,16 @@
 import UIKit
 
 final class PushAlertViewController: UIViewController {
+
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureNavigationBar()
     }
+
+    // MARK: - Private Methods
 
     private func configureNavigationBar() {
         let titleLabel = UILabel(text: ViewCategory.pushAlert.viewTitle)
