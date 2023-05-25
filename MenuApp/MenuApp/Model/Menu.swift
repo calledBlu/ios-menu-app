@@ -10,6 +10,7 @@ import Foundation
 struct Menu {
     var name: String
     var category: FoodCategory
+    var date: Day
 
     enum FoodCategory: CustomStringConvertible {
         case korean
