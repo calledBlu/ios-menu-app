@@ -8,15 +8,11 @@
 import Foundation
 
 struct MenuCalendar {
-    let calendar: Calendar
-    let dateFormatter: DateFormatter
     var calendarDate: Date
-    var days: [String]
+    var daysInMonth: [Day]?
 
     init() {
-        self.calendar = Calendar.current
-        self.dateFormatter = DateFormatter()
         self.calendarDate = Date()
-        self.days = []
+        self.daysInMonth = []
     }
 }
