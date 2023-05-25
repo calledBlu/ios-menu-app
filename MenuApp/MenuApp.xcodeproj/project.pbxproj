@@ -39,6 +39,7 @@
 		F0EEDA162A1EF7BD00899AFB /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0EEDA0D2A1EF7BC00899AFB /* Pretendard-Black.otf */; };
 		F0EEDA172A1EF7BD00899AFB /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0EEDA0E2A1EF7BD00899AFB /* Pretendard-Bold.otf */; };
 		F0EEDA182A1EF7BD00899AFB /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0EEDA0F2A1EF7BD00899AFB /* Pretendard-Light.otf */; };
+		F0EEDA1D2A1F1D4D00899AFB /* DateProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EEDA1C2A1F1D4D00899AFB /* DateProvidable.swift */; };
 		F0F3BBA92A16147D002DD6C6 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3BBA82A16147D002DD6C6 /* Menu.swift */; };
 		F0F3BBE82A17CBB8002DD6C6 /* UITabBarController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3BBE72A17CBB8002DD6C6 /* UITabBarController+Extension.swift */; };
 		F0F3BBEA2A17F6AB002DD6C6 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3BBE92A17F6AB002DD6C6 /* CalendarViewController.swift */; };
@@ -93,6 +94,7 @@
 		F0EEDA0D2A1EF7BC00899AFB /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		F0EEDA0E2A1EF7BD00899AFB /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		F0EEDA0F2A1EF7BD00899AFB /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		F0EEDA1C2A1F1D4D00899AFB /* DateProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateProvidable.swift; sourceTree = "<group>"; };
 		F0F3BBA82A16147D002DD6C6 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		F0F3BBE72A17CBB8002DD6C6 /* UITabBarController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extension.swift"; sourceTree = "<group>"; };
 		F0F3BBE92A17F6AB002DD6C6 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		F01D72142A1E7C0300453325 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				F0EEDA1B2A1F1D3A00899AFB /* Interface */,
 				F0B13E242A1B25F900617B97 /* DateProvider.swift */,
 			);
 			path = Provider;
@@ -243,6 +246,14 @@
 				F0EEDA0A2A1EF7BC00899AFB /* Pretendard-Thin.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		F0EEDA1B2A1F1D3A00899AFB /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				F0EEDA1C2A1F1D4D00899AFB /* DateProvidable.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		F0F3BBA72A160F9D002DD6C6 /* Model */ = {
@@ -419,6 +430,7 @@
 				F0B13E312A1B553600617B97 /* CalendarTitleStackView.swift in Sources */,
 				F0B13E2D2A1B4D5B00617B97 /* WeekStackView.swift in Sources */,
 				F0C160C52A1E5FBD000D6C68 /* CircleView.swift in Sources */,
+				F0EEDA1D2A1F1D4D00899AFB /* DateProvidable.swift in Sources */,
 				F0B13E232A1B006800617B97 /* MenuCalendar.swift in Sources */,
 				F0F3BBEE2A17F6DB002DD6C6 /* PushAlertViewController.swift in Sources */,
 				F02F08812A15FB600020E2D2 /* MenuTabBarController.swift in Sources */,
