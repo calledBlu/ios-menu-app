@@ -11,15 +11,24 @@ final class CalendarTitleStackView: RoundedStackView {
     private lazy var previousButton = UIButton(systemName: "chevron.left")
     private lazy var nextButton = UIButton(systemName: "chevron.right")
     private lazy var title = UILabel()
+    var delegate: CalendarTitleStackViewDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         configureTitleView()
+        configureButtonFunctuion()
     }
 
     required init(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+
+        configureTitleView()
+        configureButtonFunctuion()
+    }
+
+    func updateDateTitle(date: String) {
+        title.text = date
     }
 
     private func configureTitleView() {
@@ -39,7 +48,7 @@ final class CalendarTitleStackView: RoundedStackView {
 
     private func configureDivider() {
         let divider = UIView()
-        divider.backgroundColor = .lightGray
+        divider.backgroundColor = .init(named: "SubGray")
 
         self.addArrangedSubview(divider)
 
@@ -53,11 +62,27 @@ final class CalendarTitleStackView: RoundedStackView {
 
     private func configureTitleLabel() {
         self.addArrangedSubview(title)
-        title.font = .boldSystemFont(ofSize: UIFont.preferredFont(forTextStyle: .body).pointSize)
+        title.text = "2023년 00월"
+        title.font = UIFont(name: "Pretendard-Bold", size: 16)
         title.textAlignment = .center
+        title.textColor = UIColor.init(named: "MainBlack")
     }
 
-    func updateDateTitle(date: String) {
-        title.text = date
+    private func configureButtonFunctuion() {
+        previousButton.addTarget(self, action: #selector(didPreviousButtonTouched(_:)), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(didNextButtonTouched(_:)), for: .touchUpInside)
     }
+
+    @objc private func didPreviousButtonTouched(_ sender: UIButton) {
+        delegate?.movePreviousMonth()
+    }
+
+    @objc private func didNextButtonTouched(_ sender: UIButton) {
+        delegate?.moveNextMonth()
+    }
+}
+
+protocol CalendarTitleStackViewDelegate: AnyObject {
+    func movePreviousMonth()
+    func moveNextMonth()
 }

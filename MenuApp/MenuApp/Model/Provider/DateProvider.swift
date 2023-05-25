@@ -8,7 +8,7 @@
 import Foundation
 
 final class DateProvider: DateProvidable {
-    
+
     // MARK: - Properties
 
     private var menuCalendar = MenuCalendar()
