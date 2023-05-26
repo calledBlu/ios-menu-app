@@ -22,9 +22,6 @@ final class CalendarTitleStackView: RoundedStackView {
 
     required init(coder: NSCoder) {
         super.init(coder: coder)
-
-        configureTitleView()
-        configureButtonFunctuion()
     }
 
     func updateDateTitle(date: String) {

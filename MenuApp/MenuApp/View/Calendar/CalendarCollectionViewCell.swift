@@ -29,8 +29,6 @@ final class CalendarCollectionViewCell: UICollectionViewCell {
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-
-        configureCalendarCell()
     }
 
     func updateDay(day: Day) {
