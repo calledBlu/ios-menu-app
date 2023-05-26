@@ -82,6 +82,8 @@ extension CalendarViewController: UICollectionViewDelegate {
 
         if let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell {
             cell.changeIsSelectStatus()
+
+            self.present(DayDetailViewController(), animated: false)
         }
     }
 
