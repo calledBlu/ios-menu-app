@@ -16,7 +16,6 @@ final class CalendarViewController: UIViewController {
 
     // MARK: - UI Components
 
-    private lazy var scrollView = UIScrollView()
     private lazy var contentView = UIView()
     private lazy var calendarTitle = CalendarTitleStackView(frame: .zero)
     private lazy var weekStackView = WeekStackView()
@@ -46,7 +45,6 @@ final class CalendarViewController: UIViewController {
     }
 
     private func configurationDelegateAndFunction() {
-        scrollView.delegate = self
         collectionView.dataSource = self
         collectionView.delegate = self
         calendarTitle.delegate = self
@@ -160,15 +158,13 @@ extension CalendarViewController {
         view.addSubview(contentView)
         contentView.addSubview(calendarTitle)
         contentView.addSubview(weekStackView)
-        contentView.addSubview(scrollView)
-        scrollView.addSubview(collectionView)
+        contentView.addSubview(collectionView)
 
         collectionView.register(cell: CalendarCollectionViewCell.self)
     }
 
     private func configureLayout() {
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsVerticalScrollIndicator = false
 
@@ -186,17 +182,12 @@ extension CalendarViewController {
             weekStackView.topAnchor.constraint(equalTo: calendarTitle.bottomAnchor, constant: 20),
             weekStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             weekStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            weekStackView.heightAnchor.constraint(equalToConstant: 40),
 
-            scrollView.topAnchor.constraint(equalTo: weekStackView.bottomAnchor, constant: 10),
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.readableContentGuide.bottomAnchor),
-
-            collectionView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            collectionView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            collectionView.topAnchor.constraint(equalTo: weekStackView.bottomAnchor, constant: 10),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView
+                .bottomAnchor.constraint(equalTo: view.readableContentGuide.bottomAnchor),
 
             collectionView.widthAnchor.constraint(equalTo: view.widthAnchor),
             collectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7)
