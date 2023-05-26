@@ -29,9 +29,24 @@ final class DayDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configure()
+    }
+}
+
+// MARK: - UI & Layout
+
+extension DayDetailViewController {
+    private func configure() {
+        configureUI()
+        configureLayout()
+    }
+
+    private func configureUI() {
         view.backgroundColor = .black.withAlphaComponent(0.5)
         view.addSubview(containerView)
+    }
 
+    private func configureLayout() {
         containerView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
