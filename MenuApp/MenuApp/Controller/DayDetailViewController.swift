@@ -11,12 +11,7 @@ final class DayDetailViewController: UIViewController {
 
     // MARK: - UI Components
 
-    private lazy var containerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-
-        return view
-    }()
+    private lazy var containerView = PopupView(frame: .zero)
 
     // MARK: - Initialization
 
@@ -47,5 +42,4 @@ final class DayDetailViewController: UIViewController {
             containerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4)
         ])
     }
-
 }

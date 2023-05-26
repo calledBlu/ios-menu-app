@@ -31,6 +31,7 @@
 		F0C160C72A1E6CD0000D6C68 /* CalendarDateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C160C62A1E6CD0000D6C68 /* CalendarDateFormat.swift */; };
 		F0C160C92A1E7985000D6C68 /* MonthMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C160C82A1E7985000D6C68 /* MonthMetadata.swift */; };
 		F0E5B9622A20464900E1FDDE /* DayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5B9612A20464900E1FDDE /* DayDetailViewController.swift */; };
+		F0E5B9642A204A7600E1FDDE /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5B9632A204A7600E1FDDE /* PopupView.swift */; };
 		F0EEDA102A1EF7BD00899AFB /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0EEDA072A1EF7BC00899AFB /* Pretendard-ExtraBold.otf */; };
 		F0EEDA112A1EF7BD00899AFB /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0EEDA082A1EF7BC00899AFB /* Pretendard-Regular.otf */; };
 		F0EEDA122A1EF7BD00899AFB /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0EEDA092A1EF7BC00899AFB /* Pretendard-SemiBold.otf */; };
@@ -87,6 +88,7 @@
 		F0C160C62A1E6CD0000D6C68 /* CalendarDateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateFormat.swift; sourceTree = "<group>"; };
 		F0C160C82A1E7985000D6C68 /* MonthMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthMetadata.swift; sourceTree = "<group>"; };
 		F0E5B9612A20464900E1FDDE /* DayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailViewController.swift; sourceTree = "<group>"; };
+		F0E5B9632A204A7600E1FDDE /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		F0EEDA072A1EF7BC00899AFB /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
 		F0EEDA082A1EF7BC00899AFB /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		F0EEDA092A1EF7BC00899AFB /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			children = (
 				F01D72152A1E7C2B00453325 /* Calendar */,
 				F0B13E262A1B31C300617B97 /* RoundedStackView.swift */,
+				F0E5B9632A204A7600E1FDDE /* PopupView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				F0C160C52A1E5FBD000D6C68 /* CircleView.swift in Sources */,
 				F0EEDA1D2A1F1D4D00899AFB /* DateProvidable.swift in Sources */,
 				F0B13E232A1B006800617B97 /* MenuCalendar.swift in Sources */,
+				F0E5B9642A204A7600E1FDDE /* PopupView.swift in Sources */,
 				F0F3BBEE2A17F6DB002DD6C6 /* PushAlertViewController.swift in Sources */,
 				F02F08812A15FB600020E2D2 /* MenuTabBarController.swift in Sources */,
 				F02F087D2A15FB600020E2D2 /* AppDelegate.swift in Sources */,
