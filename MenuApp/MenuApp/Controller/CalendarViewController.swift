@@ -140,6 +140,8 @@ extension CalendarViewController: CalendarTitleStackViewDelegate {
     }
 }
 
+// MARK: - UICollectionViewDataSource
+
 extension CalendarViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dateProvider.sendDaysInMonth().count

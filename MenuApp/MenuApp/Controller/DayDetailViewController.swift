@@ -11,7 +11,7 @@ final class DayDetailViewController: UIViewController {
 
     // MARK: - UI Components
 
-    private lazy var containerView = PopupView(frame: .zero)
+    private lazy var popupView = PopupView(frame: .zero)
 
     // MARK: - Initialization
 
@@ -30,6 +30,56 @@ final class DayDetailViewController: UIViewController {
         super.viewDidLoad()
 
         configure()
+        popupView.collectionView.delegate = self
+        popupView.collectionView.dataSource = self
+        popupView.buttonStackView.delegate = self
+    }
+}
+
+extension DayDetailViewController: ButtonStackViewDelegate {
+    func moveAddView() {
+
+    }
+
+    func dismissCurrentView() {
+        dismiss(animated: false)
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension DayDetailViewController: UICollectionViewDelegate { }
+
+// MARK: - UICollectionViewDataSource
+
+extension DayDetailViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeue(cell: MenuListCell.self, for: indexPath)
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension DayDetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = popupView.frame.width
+
+        return CGSize(width: width, height: 40)
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
     }
 }
 
@@ -43,18 +93,18 @@ extension DayDetailViewController {
 
     private func configureUI() {
         view.backgroundColor = .black.withAlphaComponent(0.5)
-        view.addSubview(containerView)
+        view.addSubview(popupView)
     }
 
     private func configureLayout() {
-        containerView.translatesAutoresizingMaskIntoConstraints = false
+        popupView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            containerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4)
+            popupView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            popupView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            popupView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            popupView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            popupView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4)
         ])
     }
 }
