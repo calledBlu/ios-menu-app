@@ -12,6 +12,8 @@ struct Day {
     let number: String
     var isSelected: Bool
     let isWithinDisplayedMonth: Bool
+    var isFavorite: Bool?
+    var menu: [Menu]?
 
     init() {
         let dateFormatter = DateFormatter()
@@ -21,6 +23,7 @@ struct Day {
         number = dateFormatter.string(from: Date())
         isSelected = true
         isWithinDisplayedMonth = true
+        isFavorite = false
     }
 
     init(date: Date, number: String, isSelected: Bool, isWithinDisplayedMonth: Bool) {

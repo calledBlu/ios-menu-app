@@ -92,9 +92,14 @@ final class CalendarCollectionViewCell: UICollectionViewCell {
 
         if day.isWithinDisplayedMonth {
             dayLabel.textColor = UIColor.init(named: "MainBlack")
-            likeIcon.tintColor = UIColor.init(named: "MainOrange")
         } else {
             dayLabel.textColor = UIColor.init(named: "SubDayGray")
+            likeIcon.tintColor = .clear
+        }
+
+        if day.isFavorite == true {
+            likeIcon.tintColor = UIColor.init(named: "MainOrange")
+        } else {
             likeIcon.tintColor = .clear
         }
     }

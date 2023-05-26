@@ -11,7 +11,7 @@ final class CalendarViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var dateProvider = DateProvider()
+    private let dateProvider = DateProvider()
     private var defaultIndexPath: IndexPath?
 
     // MARK: - UI Components
@@ -80,10 +80,12 @@ extension CalendarViewController: UICollectionViewDelegate {
             defaultCell.changeIsDeselectStatus()
         }
 
+        let daysInMonth = dateProvider.sendDaysInMonth()
+
         if let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell {
             cell.changeIsSelectStatus()
 
-            self.present(DayDetailViewController(), animated: false)
+            self.present(DayDetailViewController(selectDayInformation: daysInMonth[indexPath.item]), animated: false)
         }
     }
 

@@ -10,6 +10,7 @@ import Foundation
 enum CalendarDateFormat {
     case yearAndMonth
     case day
+    case monthAndDay
 
     var format: String {
         switch self {
@@ -17,6 +18,8 @@ enum CalendarDateFormat {
             return "YYYY년 MM월"
         case .day:
             return "d"
+        case .monthAndDay:
+            return "MM월 dd일 EEEE"
         }
     }
 }

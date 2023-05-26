@@ -60,12 +60,10 @@ final class ButtonStackView: UIStackView {
     }
 
     @objc private func didAddButtonTouched(_ sender: UIButton) {
-        print(#function)
         delegate?.moveAddView()
     }
 
     @objc private func didCloseButtonTouched(_ sender: UIButton) {
-        print(#function)
         delegate?.dismissCurrentView()
     }
 }
@@ -73,4 +71,8 @@ final class ButtonStackView: UIStackView {
 protocol ButtonStackViewDelegate: AnyObject {
     func moveAddView()
     func dismissCurrentView()
+}
+
+final class AddMenuController: UIViewController {
+
 }

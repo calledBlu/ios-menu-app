@@ -9,6 +9,10 @@ import UIKit
 
 final class DayDetailViewController: UIViewController {
 
+    // MARK: - Properties
+    private let dateProvider = DateProvider()
+    private var selectDayInformation: Day?
+
     // MARK: - UI Components
 
     private lazy var popupView = PopupView(frame: .zero)
@@ -17,7 +21,14 @@ final class DayDetailViewController: UIViewController {
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
         modalPresentationStyle = .overFullScreen
+    }
+
+    convenience init(selectDayInformation: Day?) {
+        self.init(nibName: nil, bundle: nil)
+        self.selectDayInformation = selectDayInformation
+        popupView.updateTitle(translateTitle())
     }
 
     required init?(coder: NSCoder) {
@@ -34,11 +45,21 @@ final class DayDetailViewController: UIViewController {
         popupView.collectionView.dataSource = self
         popupView.buttonStackView.delegate = self
     }
+
+    private func translateTitle() -> String {
+        guard let date = selectDayInformation?.date else {
+            return ""
+        }
+
+        let weekday = dateProvider.detailTitleDateFormatter.string(from: date)
+
+        return weekday
+    }
 }
 
 extension DayDetailViewController: ButtonStackViewDelegate {
     func moveAddView() {
-
+        // 새 뷰컨 추가 예정
     }
 
     func dismissCurrentView() {

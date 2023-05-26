@@ -30,6 +30,10 @@ final class PopupView: UIView {
         super.init(coder: coder)
     }
 
+    func updateTitle(_ text: String) {
+        detailTitleStackView.updateDateTitle(date: text)
+    }
+
     private func configure() {
         configureUI()
         configureLayout()

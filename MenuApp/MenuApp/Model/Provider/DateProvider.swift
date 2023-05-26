@@ -17,6 +17,7 @@ final class DateProvider: DateProvidable {
     let calendar: Calendar
     let titleDateFormatter: DateFormatter
     let dayDateFormatter: DateFormatter
+    let detailTitleDateFormatter: DateFormatter
     let selectedDate = Date()
 
     // MARK: - Initialization
@@ -25,9 +26,11 @@ final class DateProvider: DateProvidable {
         self.calendar = Calendar(identifier: .gregorian)
         self.titleDateFormatter = DateFormatter()
         self.dayDateFormatter = DateFormatter()
+        self.detailTitleDateFormatter = DateFormatter()
 
         self.titleDateFormatter.dateFormat = CalendarDateFormat.yearAndMonth.format
         self.dayDateFormatter.dateFormat = CalendarDateFormat.day.format
+        self.detailTitleDateFormatter.dateFormat = CalendarDateFormat.monthAndDay.format
     }
 
     // MARK: - Public Methods

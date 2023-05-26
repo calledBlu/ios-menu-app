@@ -33,6 +33,9 @@
 		F0E5B9622A20464900E1FDDE /* DayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5B9612A20464900E1FDDE /* DayDetailViewController.swift */; };
 		F0E5B9642A204A7600E1FDDE /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5B9632A204A7600E1FDDE /* PopupView.swift */; };
 		F0E5B9692A204DF400E1FDDE /* DetailTitleStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5B9682A204DF400E1FDDE /* DetailTitleStackView.swift */; };
+		F0E5B96B2A20675800E1FDDE /* MenuListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5B96A2A20675800E1FDDE /* MenuListCell.swift */; };
+		F0E5B96D2A20749300E1FDDE /* MenuListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5B96C2A20749300E1FDDE /* MenuListCellView.swift */; };
+		F0E5B96F2A20750E00E1FDDE /* ButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5B96E2A20750E00E1FDDE /* ButtonStackView.swift */; };
 		F0EEDA102A1EF7BD00899AFB /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0EEDA072A1EF7BC00899AFB /* Pretendard-ExtraBold.otf */; };
 		F0EEDA112A1EF7BD00899AFB /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0EEDA082A1EF7BC00899AFB /* Pretendard-Regular.otf */; };
 		F0EEDA122A1EF7BD00899AFB /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0EEDA092A1EF7BC00899AFB /* Pretendard-SemiBold.otf */; };
@@ -91,6 +94,9 @@
 		F0E5B9612A20464900E1FDDE /* DayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailViewController.swift; sourceTree = "<group>"; };
 		F0E5B9632A204A7600E1FDDE /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		F0E5B9682A204DF400E1FDDE /* DetailTitleStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTitleStackView.swift; sourceTree = "<group>"; };
+		F0E5B96A2A20675800E1FDDE /* MenuListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListCell.swift; sourceTree = "<group>"; };
+		F0E5B96C2A20749300E1FDDE /* MenuListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListCellView.swift; sourceTree = "<group>"; };
+		F0E5B96E2A20750E00E1FDDE /* ButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStackView.swift; sourceTree = "<group>"; };
 		F0EEDA072A1EF7BC00899AFB /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
 		F0EEDA082A1EF7BC00899AFB /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		F0EEDA092A1EF7BC00899AFB /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
@@ -260,6 +266,9 @@
 			children = (
 				F0E5B9632A204A7600E1FDDE /* PopupView.swift */,
 				F0E5B9682A204DF400E1FDDE /* DetailTitleStackView.swift */,
+				F0E5B96A2A20675800E1FDDE /* MenuListCell.swift */,
+				F0E5B96C2A20749300E1FDDE /* MenuListCellView.swift */,
+				F0E5B96E2A20750E00E1FDDE /* ButtonStackView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -440,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E5B96B2A20675800E1FDDE /* MenuListCell.swift in Sources */,
 				F0F3BBEA2A17F6AB002DD6C6 /* CalendarViewController.swift in Sources */,
 				F0F3BBE82A17CBB8002DD6C6 /* UITabBarController+Extension.swift in Sources */,
 				F0B13E292A1B353400617B97 /* UILabel+Extension.swift in Sources */,
@@ -448,12 +458,14 @@
 				F0B13E2D2A1B4D5B00617B97 /* WeekStackView.swift in Sources */,
 				F0C160C52A1E5FBD000D6C68 /* CircleView.swift in Sources */,
 				F0EEDA1D2A1F1D4D00899AFB /* DateProvidable.swift in Sources */,
+				F0E5B96D2A20749300E1FDDE /* MenuListCellView.swift in Sources */,
 				F0B13E232A1B006800617B97 /* MenuCalendar.swift in Sources */,
 				F0E5B9642A204A7600E1FDDE /* PopupView.swift in Sources */,
 				F0F3BBEE2A17F6DB002DD6C6 /* PushAlertViewController.swift in Sources */,
 				F02F08812A15FB600020E2D2 /* MenuTabBarController.swift in Sources */,
 				F02F087D2A15FB600020E2D2 /* AppDelegate.swift in Sources */,
 				F0C160C72A1E6CD0000D6C68 /* CalendarDateFormat.swift in Sources */,
+				F0E5B96F2A20750E00E1FDDE /* ButtonStackView.swift in Sources */,
 				F0B13E372A1C2AB900617B97 /* CalendarCollectionViewCell.swift in Sources */,
 				F0C160C92A1E7985000D6C68 /* MonthMetadata.swift in Sources */,
 				F0F3BBF02A17F898002DD6C6 /* ViewCategory.swift in Sources */,

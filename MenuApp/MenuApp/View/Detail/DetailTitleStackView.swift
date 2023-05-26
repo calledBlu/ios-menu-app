@@ -8,13 +8,15 @@
 import UIKit
 
 final class DetailTitleStackView: RoundedStackView {
-    private lazy var title = UILabel()
+    private lazy var detailTitle = UILabel()
+    private lazy var likeButton = UIButton(systemName: "heart.fill")
     private lazy var likeIcon = UIImageView(image: UIImage(systemName: "heart.fill"))
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         configureTitleView()
+        configureButtonFunctuion()
     }
 
     required init(coder: NSCoder) {
@@ -22,14 +24,15 @@ final class DetailTitleStackView: RoundedStackView {
     }
 
     func updateDateTitle(date: String) {
-        title.text = date
+        self.detailTitle.text = date
     }
 
     private func configureTitleView() {
         configurePaddingView()
         configureTitleLabel()
         configureDivider()
-        self.addArrangedSubview(likeIcon)
+//        self.addArrangedSubview(likeIcon)
+        self.addArrangedSubview(likeButton)
         likeIcon.tintColor = .init(named: "MainOrange")
         configurePaddingView()
     }
@@ -54,11 +57,18 @@ final class DetailTitleStackView: RoundedStackView {
     }
 
     private func configureTitleLabel() {
-        let title = UILabel()
-        self.addArrangedSubview(title)
-        title.text = "04월 02일 수요일"
-        title.font = UIFont(name: "Pretendard-Bold", size: 16)
-        title.textAlignment = .center
-        title.textColor = UIColor.init(named: "MainBlack")
+        self.addArrangedSubview(detailTitle)
+        detailTitle.text = "04월 02일 수요일"
+        detailTitle.font = UIFont(name: "Pretendard-Bold", size: 16)
+        detailTitle.textAlignment = .center
+        detailTitle.textColor = UIColor.init(named: "MainBlack")
+    }
+
+    private func configureButtonFunctuion() {
+        likeButton.addTarget(self, action: #selector(didLikeBttonTouched(_:)), for: .touchUpInside)
+    }
+
+    @objc private func didLikeBttonTouched(_ sender: UIButton) {
+
     }
 }
