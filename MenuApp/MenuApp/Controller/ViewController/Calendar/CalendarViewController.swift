@@ -78,6 +78,8 @@ final class CalendarViewController: UIViewController {
     }
 }
 
+// MARK: - UIViewControllerTransitioningDelegate
+
 extension CalendarViewController: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController,
                                 presenting: UIViewController?,
