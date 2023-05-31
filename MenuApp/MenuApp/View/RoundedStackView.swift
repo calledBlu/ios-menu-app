@@ -15,6 +15,12 @@ class RoundedStackView: UIStackView {
         self.translatesAutoresizingMaskIntoConstraints = false
     }
 
+    convenience init(borderColor: UIColor?) {
+        self.init(frame: .zero)
+
+        self.layer.borderColor = borderColor?.cgColor
+    }
+
     required init(coder: NSCoder) {
         super.init(coder: coder)
     }
