@@ -7,12 +7,19 @@
 
 import UIKit
 
+protocol CalendarTitleStackViewDelegate: AnyObject {
+    func tapPreviousMonth()
+    func tapNextMonth()
+    func tapTitle()
+}
+
 final class CalendarTitleStackView: RoundedStackView {
+    var delegate: CalendarTitleStackViewDelegate?
+
+
     private lazy var previousButton = UIButton(systemName: "chevron.left")
     private lazy var nextButton = UIButton(systemName: "chevron.right")
     private lazy var title = UILabel()
-    
-    var delegate: CalendarTitleStackViewDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -69,18 +76,21 @@ final class CalendarTitleStackView: RoundedStackView {
     private func configureButtonFunctuion() {
         previousButton.addTarget(self, action: #selector(didPreviousButtonTouched(_:)), for: .touchUpInside)
         nextButton.addTarget(self, action: #selector(didNextButtonTouched(_:)), for: .touchUpInside)
+
+        let labelTap = UITapGestureRecognizer(target: self, action: #selector(didTitleLabelTouched(_:)))
+        title.isUserInteractionEnabled = true
+        title.addGestureRecognizer(labelTap)
     }
 
     @objc private func didPreviousButtonTouched(_ sender: UIButton) {
-        delegate?.movePreviousMonth()
+        delegate?.tapPreviousMonth()
     }
 
     @objc private func didNextButtonTouched(_ sender: UIButton) {
-        delegate?.moveNextMonth()
+        delegate?.tapNextMonth()
     }
-}
 
-protocol CalendarTitleStackViewDelegate: AnyObject {
-    func movePreviousMonth()
-    func moveNextMonth()
+    @objc func didTitleLabelTouched(_ sender: UITapGestureRecognizer) {
+        delegate?.tapTitle()
+    }
 }
