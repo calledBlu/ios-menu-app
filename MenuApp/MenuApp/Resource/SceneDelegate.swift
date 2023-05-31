@@ -16,9 +16,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         UNUserNotificationCenter.current().delegate = self
 
-        guard (scene as? UIWindowScene) != nil else {
+        guard let windowScene = (scene as? UIWindowScene) else {
             return
         }
+
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = LoadingViewController()
+        window.makeKeyAndVisible()
+        self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) { }
