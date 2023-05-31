@@ -8,9 +8,6 @@
 import Foundation
 
 final class DateProvider: DateProvidable {
-
-    // MARK: - Properties
-
     private var menuCalendar = MenuCalendar()
     private var monthMetaData: MonthMetadata?
 
@@ -18,15 +15,11 @@ final class DateProvider: DateProvidable {
     let formatter: DateFormatter
     let selectedDate = Date()
 
-    // MARK: - Initialization
-
     init() {
         self.calendar = Calendar(identifier: .gregorian)
         self.formatter = DateFormatter()
         self.formatter.setLocaleKoKr()
     }
-
-    // MARK: - Public Methods
 
     func configureMonthMetaData(_ data: MonthMetadata?) {
         monthMetaData = data
@@ -66,8 +59,6 @@ final class DateProvider: DateProvidable {
     func updateDaysInMonth(with index: IndexPath, value: Bool) {
         menuCalendar.daysInMonth?[index.item].isSelected = value
     }
-
-    // MARK: - Private Methods
 
     private func startDayOfTheWeek() -> Int {
         return calendar.component(.weekday, from: menuCalendar.calendarDate) - 1

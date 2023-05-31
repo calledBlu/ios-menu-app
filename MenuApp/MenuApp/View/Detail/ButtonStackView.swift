@@ -13,11 +13,11 @@ protocol ButtonStackViewDelegate: AnyObject {
 }
 
 final class ButtonStackView: UIStackView {
+    var delegate: ButtonStackViewDelegate?
+
     private let buttonFont = UIFont(name: "Pretendard-Regular", size: 14)
     private lazy var addButton = UIButton()
     private lazy var closeButton = UIButton()
-
-    var delegate: ButtonStackViewDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -12,7 +12,7 @@ extension UILabel {
         self.init()
 
         self.text = text
-        self.font = .boldSystemFont(ofSize: UIFont.preferredFont(forTextStyle: .title3).pointSize)
+        self.font = UIFont(name: "Pretendard-Bold", size: 18)
         self.textColor = .white
     }
 }

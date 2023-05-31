@@ -9,12 +9,12 @@ import UIKit
 
 final class DetailTitleStackView: RoundedStackView {
     private var isFavorite = false
-    private var tapLikeIconGesture: UITapGestureRecognizer?
-    private let likeDayCoreDataManager = LikeDayCoreDataManager.shared
     private var titleDate: Date?
+    private let likeDayCoreDataManager = LikeDayCoreDataManager.shared
 
     private lazy var detailTitle = UILabel()
-    private var likeIcon = UIImageView(image: UIImage(systemName: "heart"))
+    private lazy var likeIcon = UIImageView(image: UIImage(systemName: "heart"))
+    private var tapLikeIconGesture: UITapGestureRecognizer?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -126,7 +126,6 @@ final class DetailTitleStackView: RoundedStackView {
         }
 
         let likeDay = LikeDay(date: titleDate)
-
         likeDayCoreDataManager.deleteLikeDay(likeDay)
     }
 }
