@@ -25,16 +25,17 @@ final class MenuAppTests: XCTestCase {
 
     func test_provider가_days를_정상적으로_가져오는가() {
         // given
-        var correct: [String] = [""]
+        let correct = 35
 
         // when
-        sut.configureCalendar()
-        for num in 1..<32 {
-            correct.append("\(num)")
-        }
+        let metaData = try? sut.generateMonthMetaData(for: Date())
+        let newDays = try? sut.generateDaysInMonth(for: sut.sendCurrentCalendarDate())
+
+        sut.configureMonthMetaData(metaData)
+        sut.updateDaysInMonth(newDays)
 
         // then
-        XCTAssertEqual(sut.menuCalendar.days, correct)
+        XCTAssertEqual(sut.sendDaysInMonth().count, correct)
     }
 
     func test_provider로_가져온_날짜의_년월을_format에_맞게_변환하는가() {
@@ -42,7 +43,8 @@ final class MenuAppTests: XCTestCase {
         let correct = "2023년 05월"
 
         // when
-        let result = sut.updateCalendarTitle()
+        sut.formatter.changeFormat(to: .yearAndMonth)
+        let result = sut.formatter.string(from: sut.sendCurrentCalendarDate())
 
         // then
         XCTAssertEqual(result, correct)
@@ -50,23 +52,56 @@ final class MenuAppTests: XCTestCase {
 
     func test_date를_변경하는_경우_days와_title이_올바르게_변경되는가() {
         // given
-        var correctDays: [String] = ["", "", "", "", "", ""]
+        let correctDays = 42
         let correctTitle = "2023년 04월"
 
         // when
-        sut.updateDate(Calendar.current.date(byAdding: DateComponents(month: -1),
-                                             to: sut.menuCalendar.calendarDate) ?? Date())
-        sut.configureCalendar()
+        let april = sut.calendar.date(byAdding: DateComponents(month: -1),
+                                   to: sut.sendCurrentCalendarDate())
 
-        let resultDays = sut.menuCalendar.days
-        let resultTitle = sut.updateCalendarTitle()
+        let metaData = try? sut.generateMonthMetaData(for: Date())
+        let days = try? sut.generateDaysInMonth(for: sut.sendCurrentCalendarDate())
 
-        for num in 1..<31 {
-            correctDays.append("\(num)")
-        }
+        sut.configureMonthMetaData(metaData)
+        sut.updateDaysInMonth(days)
+        sut.updateCalendarDate(april)
+
+        let newMetaData = try? sut.generateMonthMetaData(for: sut.sendCurrentCalendarDate())
+        let newDays = try? sut.generateDaysInMonth(for: sut.sendCurrentCalendarDate())
+
+        sut.configureMonthMetaData(newMetaData)
+        sut.updateDaysInMonth(newDays)
+
+        let resultDays = sut.sendDaysInMonth().count
+        sut.formatter.changeFormat(to: .yearAndMonth)
+        let resultTitle = sut.formatter.string(from: sut.sendCurrentCalendarDate())
 
         // then
+        print(sut.sendDaysInMonth())
         XCTAssertEqual(resultDays, correctDays)
         XCTAssertEqual(resultTitle, correctTitle)
+    }
+
+    func test_dateFormatter의_dateformat만_변경하여_사용할_수_있는가() {
+        // given
+        let today = Date()
+        let calendarTitleResult = "2023년 05월"
+        let detailTitleResult = "05월 27일 토요일"
+        let listTextResult = "2023년 05월 27일"
+
+        // when
+        sut.formatter.changeFormat(to: .yearAndMonth)
+        let calendarTitle = sut.formatter.string(from: today)
+
+        sut.formatter.changeFormat(to: .monthAndDay)
+        let detailTitle = sut.formatter.string(from: today)
+
+        sut.formatter.changeFormat(to: .list)
+        let listText = sut.formatter.string(from: today)
+
+        // then
+        XCTAssertEqual(calendarTitle, calendarTitleResult)
+        XCTAssertEqual(detailTitle, detailTitleResult)
+        XCTAssertEqual(listText, listTextResult)
     }
 }
