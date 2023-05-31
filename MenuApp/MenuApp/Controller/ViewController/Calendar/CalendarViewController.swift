@@ -6,13 +6,18 @@
 //
 
 import UIKit
+import CoreData
 
 final class CalendarViewController: UIViewController {
 
     // MARK: - Properties
 
     private let dateProvider = DateProvider()
+    private let likeDayCoreDataManager = LikeDayCoreDataManager.shared
+    private var likeDays: [LikeDay]?
     private var defaultIndexPath: IndexPath?
+    private var rightToLeftSwipeGestureRecognizer = UISwipeGestureRecognizer()
+    private var leftToRightSwipeGestureRecognizer = UISwipeGestureRecognizer()
 
     // MARK: - UI Components
 
@@ -28,8 +33,15 @@ final class CalendarViewController: UIViewController {
 
         self.view.backgroundColor = .systemBackground
 
+        likeDays = likeDayCoreDataManager.getLikeDays()
         configure()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        likeDays = likeDayCoreDataManager.getLikeDays()
+        dateProvider.updateCalendarDate(Date())
         updateCalendar()
+        collectionView.reloadData()
     }
 
     // MARK: - Private Methods
@@ -51,8 +63,70 @@ final class CalendarViewController: UIViewController {
     }
 
     private func updateTitle() {
-        let date = dateProvider.titleDateFormatter.string(from: dateProvider.sendCurrentCalendarDate())
+        dateProvider.formatter.changeFormat(to: .yearAndMonth)
+
+        let date = dateProvider.formatter.string(from: dateProvider.sendCurrentCalendarDate())
         calendarTitle.updateDateTitle(date: date)
+    }
+
+    private func presentCalendarPickerController() {
+        let calendarViewController = CalendarPickerViewController(date: dateProvider.sendCurrentCalendarDate())
+        calendarViewController.delegate = self
+        calendarViewController.modalPresentationStyle = .custom
+        calendarViewController.transitioningDelegate = self
+        present(calendarViewController, animated: true)
+    }
+}
+
+extension CalendarViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController,
+                                presenting: UIViewController?,
+                                source: UIViewController) -> UIPresentationController? {
+        return HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
+    }
+}
+
+// MARK: - CalendarPickerControllerDelegate
+
+extension CalendarViewController: DayDetailViewControllerDelegate {
+    func refreshCalendarView() {
+        likeDays = likeDayCoreDataManager.getLikeDays()
+        updateCalendar()
+        collectionView.reloadData()
+    }
+}
+
+// MARK: - CalendarPickerControllerDelegate
+
+extension CalendarViewController: CalendarPickerControllerDelegate {
+    func updateDate(_ date: Date) {
+        dateProvider.updateCalendarDate(date)
+        updateCalendar()
+        collectionView.reloadData()
+    }
+}
+
+// MARK: - CalendarTitleStackViewDelegate
+
+extension CalendarViewController: CalendarTitleStackViewDelegate {
+    func tapPreviousMonth() {
+        let previous = dateProvider.calendar.date(byAdding: DateComponents(month: -1),
+                                                  to: dateProvider.sendCurrentCalendarDate())
+        dateProvider.updateCalendarDate(previous)
+        updateCalendar()
+        collectionView.reloadData()
+    }
+
+    func tapNextMonth() {
+        let next = dateProvider.calendar.date(byAdding: DateComponents(month: 1),
+                                              to: dateProvider.sendCurrentCalendarDate())
+        dateProvider.updateCalendarDate(next)
+        updateCalendar()
+        collectionView.reloadData()
+    }
+
+    func tapTitle() {
+        presentCalendarPickerController()
     }
 }
 
@@ -65,6 +139,7 @@ extension CalendarViewController: UICollectionViewDelegate {
         let daysInMonth = dateProvider.sendDaysInMonth()
 
         cell.updateDay(day: daysInMonth[indexPath.item])
+        cell.checkIsFavorite(likeDays: likeDays)
 
         if daysInMonth[indexPath.item].isSelected == true {
             cell.changeIsSelectStatus()
@@ -85,7 +160,10 @@ extension CalendarViewController: UICollectionViewDelegate {
         if let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell {
             cell.changeIsSelectStatus()
 
-            self.present(DayDetailViewController(selectDayInformation: daysInMonth[indexPath.item]), animated: false)
+            dateProvider.updateCalendarDate(daysInMonth[indexPath.item].date)
+            let dayDetailViewContriller = DayDetailViewController(selectDayInformation: daysInMonth[indexPath.item])
+            dayDetailViewContriller.delegate = self
+            self.present(dayDetailViewContriller, animated: false)
         }
     }
 
@@ -122,26 +200,6 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-// MARK: - CalendarTitleStackViewDelegate
-
-extension CalendarViewController: CalendarTitleStackViewDelegate {
-    func movePreviousMonth() {
-        let previous = dateProvider.calendar.date(byAdding: DateComponents(month: -1),
-                                                  to: dateProvider.sendCurrentCalendarDate())
-        dateProvider.updateCalendarDate(previous)
-        updateCalendar()
-        collectionView.reloadData()
-    }
-
-    func moveNextMonth() {
-        let next = dateProvider.calendar.date(byAdding: DateComponents(month: 1),
-                                              to: dateProvider.sendCurrentCalendarDate())
-        dateProvider.updateCalendarDate(next)
-        updateCalendar()
-        collectionView.reloadData()
-    }
-}
-
 // MARK: - UICollectionViewDataSource
 
 extension CalendarViewController: UICollectionViewDataSource {
@@ -158,6 +216,7 @@ extension CalendarViewController {
         configureUI()
         configureLayout()
         configurationDelegateAndFunction()
+        configurePanGesture()
     }
 
     private func configureUI() {
@@ -192,12 +251,21 @@ extension CalendarViewController {
             collectionView.topAnchor.constraint(equalTo: weekStackView.bottomAnchor, constant: 10),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView
-                .bottomAnchor.constraint(equalTo: view.readableContentGuide.bottomAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.readableContentGuide.bottomAnchor),
 
             collectionView.widthAnchor.constraint(equalTo: view.widthAnchor),
             collectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7)
         ])
+    }
+
+    private func configurePanGesture() {
+        rightToLeftSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(moveNextMonth))
+        rightToLeftSwipeGestureRecognizer.direction = .left
+        collectionView.addGestureRecognizer(rightToLeftSwipeGestureRecognizer)
+
+        leftToRightSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(movePreviousMonth))
+        leftToRightSwipeGestureRecognizer.direction = .right
+        collectionView.addGestureRecognizer(leftToRightSwipeGestureRecognizer)
     }
 
     private func configureNavigationBar() {
@@ -205,5 +273,13 @@ extension CalendarViewController {
 
         let leftBarButton = UIBarButtonItem(customView: titleLabel)
         navigationItem.leftBarButtonItems = [leftBarButton]
+    }
+
+    @objc func movePreviousMonth() {
+        tapPreviousMonth()
+    }
+
+    @objc func moveNextMonth() {
+        tapNextMonth()
     }
 }

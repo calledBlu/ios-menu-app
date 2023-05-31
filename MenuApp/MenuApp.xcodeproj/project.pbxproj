@@ -14,7 +14,28 @@
 		F02F08862A15FB610020E2D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F02F08852A15FB610020E2D2 /* Assets.xcassets */; };
 		F02F08892A15FB610020E2D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F02F08872A15FB610020E2D2 /* LaunchScreen.storyboard */; };
 		F02F08942A15FB610020E2D2 /* MenuAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F08932A15FB610020E2D2 /* MenuAppTests.swift */; };
-		F02F08B32A15FFBE0020E2D2 /* .swiftlin.yml in Resources */ = {isa = PBXBuildFile; fileRef = F02F08B22A15FFBE0020E2D2 /* .swiftlin.yml */; };
+		F02FC1292A24CD4B0078EA6B /* LikeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FC1282A24CD4B0078EA6B /* LikeListCell.swift */; };
+		F02FC12B2A24CDD00078EA6B /* AddMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FC12A2A24CDD00078EA6B /* AddMenuViewController.swift */; };
+		F02FC12D2A24D13C0078EA6B /* CalendarPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FC12C2A24D13C0078EA6B /* CalendarPickerViewController.swift */; };
+		F02FC12F2A24D17B0078EA6B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FC12E2A24D17B0078EA6B /* UIView+Extension.swift */; };
+		F02FC1322A24D1D80078EA6B /* HalfSizePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FC1312A24D1D80078EA6B /* HalfSizePresentationController.swift */; };
+		F03C24572A20A47700F5B6F6 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03C24562A20A47700F5B6F6 /* CoreDataTests.swift */; };
+		F03C245E2A20D55E00F5B6F6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F03C245C2A20D55E00F5B6F6 /* Model.xcdatamodeld */; };
+		F03C24652A20DB4400F5B6F6 /* FoodMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03C24632A20DB4400F5B6F6 /* FoodMO+CoreDataClass.swift */; };
+		F03C24662A20DB4400F5B6F6 /* FoodMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03C24642A20DB4400F5B6F6 /* FoodMO+CoreDataProperties.swift */; };
+		F0443C602A21808400C57324 /* FoodCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0443C5F2A21808400C57324 /* FoodCoreDataManager.swift */; };
+		F0443C632A2278BA00C57324 /* LikeDayMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0443C612A2278BA00C57324 /* LikeDayMO+CoreDataClass.swift */; };
+		F0443C642A2278BA00C57324 /* LikeDayMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0443C622A2278BA00C57324 /* LikeDayMO+CoreDataProperties.swift */; };
+		F0443C662A2278F400C57324 /* LikeDayCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0443C652A2278F400C57324 /* LikeDayCoreDataManager.swift */; };
+		F0443C682A22792D00C57324 /* LikeDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0443C672A22792D00C57324 /* LikeDay.swift */; };
+		F09BF2992A25B2DB007E3348 /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09BF2982A25B2DB007E3348 /* MenuDetailViewController.swift */; };
+		F09BF2AB2A25E553007E3348 /* AlertKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09BF2AA2A25E553007E3348 /* AlertKind.swift */; };
+		F09BF2AF2A261221007E3348 /* AlertSendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09BF2AE2A261221007E3348 /* AlertSendable.swift */; };
+		F09BF2B22A261237007E3348 /* MenuReadyAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09BF2B12A261237007E3348 /* MenuReadyAlert.swift */; };
+		F09BF2B42A26124B007E3348 /* MenuStartAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09BF2B32A26124B007E3348 /* MenuStartAlert.swift */; };
+		F09BF2B62A26129B007E3348 /* UNUserNotificationCenter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09BF2B52A26129B007E3348 /* UNUserNotificationCenter+Extension.swift */; };
+		F09BF2B92A2612CB007E3348 /* PushAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09BF2B82A2612CB007E3348 /* PushAlertCell.swift */; };
+		F09BF2BB2A2626F8007E3348 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F09BF2BA2A2626F8007E3348 /* .swiftlint.yml */; };
 		F0B13E232A1B006800617B97 /* MenuCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B13E222A1B006800617B97 /* MenuCalendar.swift */; };
 		F0B13E252A1B25F900617B97 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B13E242A1B25F900617B97 /* DateProvider.swift */; };
 		F0B13E272A1B31C300617B97 /* RoundedStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B13E262A1B31C300617B97 /* RoundedStackView.swift */; };
@@ -26,7 +47,8 @@
 		F0B13E352A1C2A9600617B97 /* UICollectionReusableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B13E342A1C2A9600617B97 /* UICollectionReusableView+Extension.swift */; };
 		F0B13E372A1C2AB900617B97 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B13E362A1C2AB900617B97 /* CalendarCollectionViewCell.swift */; };
 		F0B13E392A1C411000617B97 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B13E382A1C411000617B97 /* Day.swift */; };
-		F0C160C32A1E5FA4000D6C68 /* NetworkDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C160C22A1E5FA4000D6C68 /* NetworkDataError.swift */; };
+		F0B50B7C2A217C9A00FA9FC8 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B50B7B2A217C9A00FA9FC8 /* DateFormatter+Extension.swift */; };
+		F0C160C32A1E5FA4000D6C68 /* CalendarDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C160C22A1E5FA4000D6C68 /* CalendarDataError.swift */; };
 		F0C160C52A1E5FBD000D6C68 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C160C42A1E5FBD000D6C68 /* CircleView.swift */; };
 		F0C160C72A1E6CD0000D6C68 /* CalendarDateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C160C62A1E6CD0000D6C68 /* CalendarDateFormat.swift */; };
 		F0C160C92A1E7985000D6C68 /* MonthMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C160C82A1E7985000D6C68 /* MonthMetadata.swift */; };
@@ -46,7 +68,7 @@
 		F0EEDA172A1EF7BD00899AFB /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0EEDA0E2A1EF7BD00899AFB /* Pretendard-Bold.otf */; };
 		F0EEDA182A1EF7BD00899AFB /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0EEDA0F2A1EF7BD00899AFB /* Pretendard-Light.otf */; };
 		F0EEDA1D2A1F1D4D00899AFB /* DateProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EEDA1C2A1F1D4D00899AFB /* DateProvidable.swift */; };
-		F0F3BBA92A16147D002DD6C6 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3BBA82A16147D002DD6C6 /* Menu.swift */; };
+		F0F3BBA92A16147D002DD6C6 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3BBA82A16147D002DD6C6 /* Food.swift */; };
 		F0F3BBE82A17CBB8002DD6C6 /* UITabBarController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3BBE72A17CBB8002DD6C6 /* UITabBarController+Extension.swift */; };
 		F0F3BBEA2A17F6AB002DD6C6 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3BBE92A17F6AB002DD6C6 /* CalendarViewController.swift */; };
 		F0F3BBEC2A17F6D3002DD6C6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3BBEB2A17F6D3002DD6C6 /* ListViewController.swift */; };
@@ -75,7 +97,28 @@
 		F02F088A2A15FB610020E2D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F02F088F2A15FB610020E2D2 /* MenuAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F02F08932A15FB610020E2D2 /* MenuAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAppTests.swift; sourceTree = "<group>"; };
-		F02F08B22A15FFBE0020E2D2 /* .swiftlin.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlin.yml; sourceTree = "<group>"; };
+		F02FC1282A24CD4B0078EA6B /* LikeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListCell.swift; sourceTree = "<group>"; };
+		F02FC12A2A24CDD00078EA6B /* AddMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenuViewController.swift; sourceTree = "<group>"; };
+		F02FC12C2A24D13C0078EA6B /* CalendarPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickerViewController.swift; sourceTree = "<group>"; };
+		F02FC12E2A24D17B0078EA6B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		F02FC1312A24D1D80078EA6B /* HalfSizePresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfSizePresentationController.swift; sourceTree = "<group>"; };
+		F03C24562A20A47700F5B6F6 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
+		F03C245D2A20D55E00F5B6F6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		F03C24632A20DB4400F5B6F6 /* FoodMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F03C24642A20DB4400F5B6F6 /* FoodMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F0443C5F2A21808400C57324 /* FoodCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCoreDataManager.swift; sourceTree = "<group>"; };
+		F0443C612A2278BA00C57324 /* LikeDayMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LikeDayMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F0443C622A2278BA00C57324 /* LikeDayMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LikeDayMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F0443C652A2278F400C57324 /* LikeDayCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeDayCoreDataManager.swift; sourceTree = "<group>"; };
+		F0443C672A22792D00C57324 /* LikeDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeDay.swift; sourceTree = "<group>"; };
+		F09BF2982A25B2DB007E3348 /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
+		F09BF2AA2A25E553007E3348 /* AlertKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertKind.swift; sourceTree = "<group>"; };
+		F09BF2AE2A261221007E3348 /* AlertSendable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSendable.swift; sourceTree = "<group>"; };
+		F09BF2B12A261237007E3348 /* MenuReadyAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuReadyAlert.swift; sourceTree = "<group>"; };
+		F09BF2B32A26124B007E3348 /* MenuStartAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuStartAlert.swift; sourceTree = "<group>"; };
+		F09BF2B52A26129B007E3348 /* UNUserNotificationCenter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UNUserNotificationCenter+Extension.swift"; sourceTree = "<group>"; };
+		F09BF2B82A2612CB007E3348 /* PushAlertCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAlertCell.swift; sourceTree = "<group>"; };
+		F09BF2BA2A2626F8007E3348 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		F0B13E222A1B006800617B97 /* MenuCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCalendar.swift; sourceTree = "<group>"; };
 		F0B13E242A1B25F900617B97 /* DateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
 		F0B13E262A1B31C300617B97 /* RoundedStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedStackView.swift; sourceTree = "<group>"; };
@@ -87,7 +130,8 @@
 		F0B13E342A1C2A9600617B97 /* UICollectionReusableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extension.swift"; sourceTree = "<group>"; };
 		F0B13E362A1C2AB900617B97 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		F0B13E382A1C411000617B97 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
-		F0C160C22A1E5FA4000D6C68 /* NetworkDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataError.swift; sourceTree = "<group>"; };
+		F0B50B7B2A217C9A00FA9FC8 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		F0C160C22A1E5FA4000D6C68 /* CalendarDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataError.swift; sourceTree = "<group>"; };
 		F0C160C42A1E5FBD000D6C68 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		F0C160C62A1E6CD0000D6C68 /* CalendarDateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateFormat.swift; sourceTree = "<group>"; };
 		F0C160C82A1E7985000D6C68 /* MonthMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthMetadata.swift; sourceTree = "<group>"; };
@@ -107,7 +151,7 @@
 		F0EEDA0E2A1EF7BD00899AFB /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		F0EEDA0F2A1EF7BD00899AFB /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		F0EEDA1C2A1F1D4D00899AFB /* DateProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateProvidable.swift; sourceTree = "<group>"; };
-		F0F3BBA82A16147D002DD6C6 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		F0F3BBA82A16147D002DD6C6 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		F0F3BBE72A17CBB8002DD6C6 /* UITabBarController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extension.swift"; sourceTree = "<group>"; };
 		F0F3BBE92A17F6AB002DD6C6 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		F0F3BBEB2A17F6D3002DD6C6 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -136,21 +180,23 @@
 		F01D72132A1E7BDA00453325 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				F01D72142A1E7C0300453325 /* DateProvider */,
 				F0C160C62A1E6CD0000D6C68 /* CalendarDateFormat.swift */,
 				F0B13E382A1C411000617B97 /* Day.swift */,
 				F0B13E222A1B006800617B97 /* MenuCalendar.swift */,
 				F0C160C82A1E7985000D6C68 /* MonthMetadata.swift */,
+				F0443C672A22792D00C57324 /* LikeDay.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		F01D72142A1E7C0300453325 /* Provider */ = {
+		F01D72142A1E7C0300453325 /* DateProvider */ = {
 			isa = PBXGroup;
 			children = (
 				F0EEDA1B2A1F1D3A00899AFB /* Interface */,
-				F0B13E242A1B25F900617B97 /* DateProvider.swift */,
+				F0B50B712A216B7D00FA9FC8 /* implementation */,
 			);
-			path = Provider;
+			path = DateProvider;
 			sourceTree = "<group>";
 		};
 		F01D72152A1E7C2B00453325 /* Calendar */ = {
@@ -167,6 +213,10 @@
 		F02F08702A15FB600020E2D2 = {
 			isa = PBXGroup;
 			children = (
+				F0443C612A2278BA00C57324 /* LikeDayMO+CoreDataClass.swift */,
+				F0443C622A2278BA00C57324 /* LikeDayMO+CoreDataProperties.swift */,
+				F03C24632A20DB4400F5B6F6 /* FoodMO+CoreDataClass.swift */,
+				F03C24642A20DB4400F5B6F6 /* FoodMO+CoreDataProperties.swift */,
 				F02F087B2A15FB600020E2D2 /* MenuApp */,
 				F02F08922A15FB610020E2D2 /* MenuAppTests */,
 				F02F087A2A15FB600020E2D2 /* Products */,
@@ -191,7 +241,7 @@
 				F0F3BBE02A17CB1C002DD6C6 /* Extension */,
 				F02F08AC2A15FC860020E2D2 /* Resource */,
 				F02F088A2A15FB610020E2D2 /* Info.plist */,
-				F02F08B22A15FFBE0020E2D2 /* .swiftlin.yml */,
+				F09BF2BA2A2626F8007E3348 /* .swiftlint.yml */,
 			);
 			path = MenuApp;
 			sourceTree = "<group>";
@@ -200,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				F02F08932A15FB610020E2D2 /* MenuAppTests.swift */,
+				F03C24562A20A47700F5B6F6 /* CoreDataTests.swift */,
 			);
 			path = MenuAppTests;
 			sourceTree = "<group>";
@@ -228,19 +279,122 @@
 		F02F08AE2A15FCAF0020E2D2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F02FC1302A24D18E0078EA6B /* ViewController */,
 				F02F08802A15FB600020E2D2 /* MenuTabBarController.swift */,
-				F0F3BBE92A17F6AB002DD6C6 /* CalendarViewController.swift */,
-				F0F3BBEB2A17F6D3002DD6C6 /* ListViewController.swift */,
-				F0F3BBED2A17F6DB002DD6C6 /* PushAlertViewController.swift */,
-				F0E5B9612A20464900E1FDDE /* DayDetailViewController.swift */,
+				F02FC1312A24D1D80078EA6B /* HalfSizePresentationController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		F02FC1272A24CD3F0078EA6B /* List */ = {
+			isa = PBXGroup;
+			children = (
+				F02FC1282A24CD4B0078EA6B /* LikeListCell.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		F02FC1302A24D18E0078EA6B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F09BF29B2A25C71D007E3348 /* List */,
+				F09BF29C2A25C722007E3348 /* Calendar */,
+				F09BF29D2A25C731007E3348 /* Detail */,
+				F09BF29F2A25C74D007E3348 /* PushAlert */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F09BF29B2A25C71D007E3348 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				F0F3BBEB2A17F6D3002DD6C6 /* ListViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		F09BF29C2A25C722007E3348 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				F0F3BBE92A17F6AB002DD6C6 /* CalendarViewController.swift */,
+				F02FC12C2A24D13C0078EA6B /* CalendarPickerViewController.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		F09BF29D2A25C731007E3348 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F0E5B9612A20464900E1FDDE /* DayDetailViewController.swift */,
+				F09BF2982A25B2DB007E3348 /* MenuDetailViewController.swift */,
+				F02FC12A2A24CDD00078EA6B /* AddMenuViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		F09BF29F2A25C74D007E3348 /* PushAlert */ = {
+			isa = PBXGroup;
+			children = (
+				F0F3BBED2A17F6DB002DD6C6 /* PushAlertViewController.swift */,
+			);
+			path = PushAlert;
+			sourceTree = "<group>";
+		};
+		F09BF2A02A25D103007E3348 /* MenuAlert */ = {
+			isa = PBXGroup;
+			children = (
+				F09BF2B02A26122D007E3348 /* Implementation */,
+				F09BF2AC2A2611FE007E3348 /* Interface */,
+				F09BF2AA2A25E553007E3348 /* AlertKind.swift */,
+			);
+			path = MenuAlert;
+			sourceTree = "<group>";
+		};
+		F09BF2AC2A2611FE007E3348 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				F09BF2AE2A261221007E3348 /* AlertSendable.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		F09BF2B02A26122D007E3348 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				F09BF2B12A261237007E3348 /* MenuReadyAlert.swift */,
+				F09BF2B32A26124B007E3348 /* MenuStartAlert.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		F09BF2B72A2612C1007E3348 /* PushAlert */ = {
+			isa = PBXGroup;
+			children = (
+				F09BF2B82A2612CB007E3348 /* PushAlertCell.swift */,
+			);
+			path = PushAlert;
+			sourceTree = "<group>";
+		};
+		F0B50B712A216B7D00FA9FC8 /* implementation */ = {
+			isa = PBXGroup;
+			children = (
+				F0B13E242A1B25F900617B97 /* DateProvider.swift */,
+			);
+			path = implementation;
+			sourceTree = "<group>";
+		};
+		F0B50B722A216B9500FA9FC8 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				F0F3BBA82A16147D002DD6C6 /* Food.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		F0C160C12A1E5F93000D6C68 /* Error */ = {
 			isa = PBXGroup;
 			children = (
-				F0C160C22A1E5FA4000D6C68 /* NetworkDataError.swift */,
+				F0C160C22A1E5FA4000D6C68 /* CalendarDataError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -273,6 +427,16 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		F0E5B9702A20978700E1FDDE /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F0443C652A2278F400C57324 /* LikeDayCoreDataManager.swift */,
+				F0443C5F2A21808400C57324 /* FoodCoreDataManager.swift */,
+				F03C245C2A20D55E00F5B6F6 /* Model.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		F0EEDA1B2A1F1D3A00899AFB /* Interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,10 +448,11 @@
 		F0F3BBA72A160F9D002DD6C6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F01D72142A1E7C0300453325 /* Provider */,
+				F0E5B9702A20978700E1FDDE /* CoreData */,
 				F01D72132A1E7BDA00453325 /* Calendar */,
+				F0B50B722A216B9500FA9FC8 /* Menu */,
+				F09BF2A02A25D103007E3348 /* MenuAlert */,
 				F0C160C12A1E5F93000D6C68 /* Error */,
-				F0F3BBA82A16147D002DD6C6 /* Menu.swift */,
 				F0F3BBEF2A17F898002DD6C6 /* ViewCategory.swift */,
 			);
 			path = Model;
@@ -301,6 +466,9 @@
 				F0F3BBE72A17CBB8002DD6C6 /* UITabBarController+Extension.swift */,
 				F0B13E322A1C2A7400617B97 /* UICollectionView+Extension.swift */,
 				F0B13E342A1C2A9600617B97 /* UICollectionReusableView+Extension.swift */,
+				F0B50B7B2A217C9A00FA9FC8 /* DateFormatter+Extension.swift */,
+				F02FC12E2A24D17B0078EA6B /* UIView+Extension.swift */,
+				F09BF2B52A26129B007E3348 /* UNUserNotificationCenter+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -308,8 +476,10 @@
 		F0F3BBE12A17CB25002DD6C6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F02FC1272A24CD3F0078EA6B /* List */,
 				F01D72152A1E7C2B00453325 /* Calendar */,
 				F0E5B9672A204DE100E1FDDE /* Detail */,
+				F09BF2B72A2612C1007E3348 /* PushAlert */,
 				F0B13E262A1B31C300617B97 /* RoundedStackView.swift */,
 			);
 			path = View;
@@ -407,8 +577,8 @@
 				F02F08862A15FB610020E2D2 /* Assets.xcassets in Resources */,
 				F0EEDA162A1EF7BD00899AFB /* Pretendard-Black.otf in Resources */,
 				F0EEDA102A1EF7BD00899AFB /* Pretendard-ExtraBold.otf in Resources */,
+				F09BF2BB2A2626F8007E3348 /* .swiftlint.yml in Resources */,
 				F02F08842A15FB600020E2D2 /* Main.storyboard in Resources */,
-				F02F08B32A15FFBE0020E2D2 /* .swiftlin.yml in Resources */,
 				F0EEDA142A1EF7BD00899AFB /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,35 +621,56 @@
 			files = (
 				F0E5B96B2A20675800E1FDDE /* MenuListCell.swift in Sources */,
 				F0F3BBEA2A17F6AB002DD6C6 /* CalendarViewController.swift in Sources */,
+				F09BF2AB2A25E553007E3348 /* AlertKind.swift in Sources */,
 				F0F3BBE82A17CBB8002DD6C6 /* UITabBarController+Extension.swift in Sources */,
+				F0B50B7C2A217C9A00FA9FC8 /* DateFormatter+Extension.swift in Sources */,
 				F0B13E292A1B353400617B97 /* UILabel+Extension.swift in Sources */,
+				F0443C632A2278BA00C57324 /* LikeDayMO+CoreDataClass.swift in Sources */,
 				F0B13E2B2A1B355200617B97 /* UIButton+Extension.swift in Sources */,
 				F0B13E312A1B553600617B97 /* CalendarTitleStackView.swift in Sources */,
 				F0B13E2D2A1B4D5B00617B97 /* WeekStackView.swift in Sources */,
 				F0C160C52A1E5FBD000D6C68 /* CircleView.swift in Sources */,
 				F0EEDA1D2A1F1D4D00899AFB /* DateProvidable.swift in Sources */,
 				F0E5B96D2A20749300E1FDDE /* MenuListCellView.swift in Sources */,
+				F0443C602A21808400C57324 /* FoodCoreDataManager.swift in Sources */,
+				F09BF2B92A2612CB007E3348 /* PushAlertCell.swift in Sources */,
 				F0B13E232A1B006800617B97 /* MenuCalendar.swift in Sources */,
 				F0E5B9642A204A7600E1FDDE /* PopupView.swift in Sources */,
+				F0443C642A2278BA00C57324 /* LikeDayMO+CoreDataProperties.swift in Sources */,
+				F03C24652A20DB4400F5B6F6 /* FoodMO+CoreDataClass.swift in Sources */,
 				F0F3BBEE2A17F6DB002DD6C6 /* PushAlertViewController.swift in Sources */,
 				F02F08812A15FB600020E2D2 /* MenuTabBarController.swift in Sources */,
+				F09BF2AF2A261221007E3348 /* AlertSendable.swift in Sources */,
 				F02F087D2A15FB600020E2D2 /* AppDelegate.swift in Sources */,
 				F0C160C72A1E6CD0000D6C68 /* CalendarDateFormat.swift in Sources */,
 				F0E5B96F2A20750E00E1FDDE /* ButtonStackView.swift in Sources */,
+				F02FC12F2A24D17B0078EA6B /* UIView+Extension.swift in Sources */,
 				F0B13E372A1C2AB900617B97 /* CalendarCollectionViewCell.swift in Sources */,
+				F02FC12B2A24CDD00078EA6B /* AddMenuViewController.swift in Sources */,
 				F0C160C92A1E7985000D6C68 /* MonthMetadata.swift in Sources */,
 				F0F3BBF02A17F898002DD6C6 /* ViewCategory.swift in Sources */,
+				F02FC12D2A24D13C0078EA6B /* CalendarPickerViewController.swift in Sources */,
 				F0F3BBEC2A17F6D3002DD6C6 /* ListViewController.swift in Sources */,
-				F0F3BBA92A16147D002DD6C6 /* Menu.swift in Sources */,
+				F0F3BBA92A16147D002DD6C6 /* Food.swift in Sources */,
+				F09BF2B22A261237007E3348 /* MenuReadyAlert.swift in Sources */,
+				F0443C682A22792D00C57324 /* LikeDay.swift in Sources */,
 				F0B13E352A1C2A9600617B97 /* UICollectionReusableView+Extension.swift in Sources */,
+				F09BF2B62A26129B007E3348 /* UNUserNotificationCenter+Extension.swift in Sources */,
 				F02F087F2A15FB600020E2D2 /* SceneDelegate.swift in Sources */,
 				F0B13E252A1B25F900617B97 /* DateProvider.swift in Sources */,
 				F0B13E272A1B31C300617B97 /* RoundedStackView.swift in Sources */,
+				F02FC1292A24CD4B0078EA6B /* LikeListCell.swift in Sources */,
 				F0E5B9692A204DF400E1FDDE /* DetailTitleStackView.swift in Sources */,
+				F02FC1322A24D1D80078EA6B /* HalfSizePresentationController.swift in Sources */,
+				F09BF2992A25B2DB007E3348 /* MenuDetailViewController.swift in Sources */,
+				F03C245E2A20D55E00F5B6F6 /* Model.xcdatamodeld in Sources */,
+				F0443C662A2278F400C57324 /* LikeDayCoreDataManager.swift in Sources */,
 				F0B13E392A1C411000617B97 /* Day.swift in Sources */,
+				F03C24662A20DB4400F5B6F6 /* FoodMO+CoreDataProperties.swift in Sources */,
+				F09BF2B42A26124B007E3348 /* MenuStartAlert.swift in Sources */,
 				F0B13E332A1C2A7400617B97 /* UICollectionView+Extension.swift in Sources */,
 				F0E5B9622A20464900E1FDDE /* DayDetailViewController.swift in Sources */,
-				F0C160C32A1E5FA4000D6C68 /* NetworkDataError.swift in Sources */,
+				F0C160C32A1E5FA4000D6C68 /* CalendarDataError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +678,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F03C24572A20A47700F5B6F6 /* CoreDataTests.swift in Sources */,
 				F02F08942A15FB610020E2D2 /* MenuAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -764,6 +956,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F03C245C2A20D55E00F5B6F6 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F03C245D2A20D55E00F5B6F6 /* Model.xcdatamodel */,
+			);
+			currentVersion = F03C245D2A20D55E00F5B6F6 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F02F08712A15FB600020E2D2 /* Project object */;
 }

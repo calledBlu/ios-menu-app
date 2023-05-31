@@ -9,8 +9,6 @@ import Foundation
 
 protocol DateProvidable {
     var calendar: Calendar { get }
-    var titleDateFormatter: DateFormatter { get }
-    var dayDateFormatter: DateFormatter { get }
     var selectedDate: Date { get }
 
     func generateMonthMetaData(for baseDate: Date) throws -> MonthMetadata
@@ -23,7 +21,8 @@ extension DateProvidable {
     func generateMonthMetaData(for baseDate: Date) throws -> MonthMetadata {
         guard let numberOfDaysInMonth = calendar.range(of: .day, in: .month, for: baseDate)?.count,
               let firstDayOfMonth = calendar.date(from: calendar.dateComponents([.year, .month],
-                                                                                from: baseDate)) else {
+                                                                                from: baseDate)),
+              let month = calendar.date(from: calendar.dateComponents([.month], from: baseDate)) else {
             throw CalendarDataError.doNotGenerateMetaData
         }
 
@@ -31,7 +30,8 @@ extension DateProvidable {
 
         return MonthMetadata(numberOfDays: numberOfDaysInMonth,
                              firstDay: firstDayOfMonth,
-                             firstWeekday: firstDayWeekday)
+                             firstWeekday: firstDayWeekday,
+                             month: month)
     }
 
     func generateDaysInMonth(for baseDate: Date) throws -> [Day] {
@@ -78,9 +78,11 @@ extension DateProvidable {
 
     func generateDay(offsetBy dayOffset: Int, for baseDate: Date, isWithinDisplayedMonth: Bool) -> Day {
         let date = calendar.date(byAdding: .day, value: dayOffset, to: baseDate) ?? baseDate
+        let dateFormatter = DateFormatter()
+        dateFormatter.changeFormat(to: .day)
 
         return Day(date: date,
-                   number: dayDateFormatter.string(from: date),
+                   number: dateFormatter.string(from: date),
                    isSelected: calendar.isDate(date, inSameDayAs: selectedDate),
                    isWithinDisplayedMonth: isWithinDisplayedMonth)
     }

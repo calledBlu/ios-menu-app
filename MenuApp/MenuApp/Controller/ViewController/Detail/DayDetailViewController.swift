@@ -7,11 +7,20 @@
 
 import UIKit
 
+protocol DayDetailViewControllerDelegate: AnyObject {
+    func refreshCalendarView()
+}
+
 final class DayDetailViewController: UIViewController {
 
     // MARK: - Properties
+
     private let dateProvider = DateProvider()
     private var selectDayInformation: Day?
+    private var foodCoreDataManager = FoodCoreDataManager.shared
+    private var selectDayFood: [Food]?
+    private var tapGestureRecognizer = UITapGestureRecognizer()
+    var delegate: DayDetailViewControllerDelegate?
 
     // MARK: - UI Components
 
@@ -23,12 +32,28 @@ final class DayDetailViewController: UIViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         modalPresentationStyle = .overFullScreen
+
     }
 
     convenience init(selectDayInformation: Day?) {
         self.init(nibName: nil, bundle: nil)
         self.selectDayInformation = selectDayInformation
-        popupView.updateTitle(translateTitle())
+
+        let menu = foodCoreDataManager.getMenu()
+
+        dateProvider.formatter.changeFormat(to: .list)
+
+        let cellDay = dateProvider.formatter.string(from: selectDayInformation?.date ?? Date())
+
+        let selectedDayMenu = menu.filter { food in
+            let menuDay = dateProvider.formatter.string(from: food.date)
+
+            return menuDay == cellDay
+        }
+
+        selectDayFood = selectedDayMenu
+
+        popupView.updateTitleAndDate(date: sendDate(), title: translateTitle())
     }
 
     required init?(coder: NSCoder) {
@@ -47,41 +72,112 @@ final class DayDetailViewController: UIViewController {
     }
 
     private func translateTitle() -> String {
-        guard let date = selectDayInformation?.date else {
-            return ""
-        }
-
-        let weekday = dateProvider.detailTitleDateFormatter.string(from: date)
+        dateProvider.formatter.changeFormat(to: .monthAndDay)
+        let weekday = dateProvider.formatter.string(from: sendDate())
 
         return weekday
+    }
+
+    private func sendDate() -> Date {
+        guard let date = selectDayInformation?.date else {
+            return Date()
+        }
+
+        return date
+    }
+
+    @objc func dismissController() {
+        self.presentedViewController?.dismiss(animated: true, completion: nil)
     }
 }
 
 extension DayDetailViewController: ButtonStackViewDelegate {
     func moveAddView() {
-        // 새 뷰컨 추가 예정
+        let addMenuViewController = AddMenuViewController(menuDate: selectDayInformation?.date
+        )
+
+        addMenuViewController.modalPresentationStyle = .formSheet
+        addMenuViewController.delegate = self
+
+        self.present(addMenuViewController, animated: true)
     }
 
     func dismissCurrentView() {
+        delegate?.refreshCalendarView()
         dismiss(animated: false)
+    }
+}
+
+extension DayDetailViewController: MenuDetailViewControllerDelegate {
+    func refreshAfterDelete() {
+        let menu = foodCoreDataManager.getMenu()
+
+        dateProvider.formatter.changeFormat(to: .list)
+
+        let cellDay = dateProvider.formatter.string(from: selectDayInformation?.date ?? Date())
+
+        let selectedDayMenu = menu.filter { food in
+            let menuDay = dateProvider.formatter.string(from: food.date)
+
+            return menuDay == cellDay
+        }
+
+        selectDayFood = selectedDayMenu
+        popupView.collectionView.reloadData()
+        configure()
+    }
+}
+
+// MARK: - AddMenuViewControllerDelegate
+
+extension DayDetailViewController: AddMenuViewControllerDelegate {
+    func refreshDetailMenuList() {
+
+        let menu = foodCoreDataManager.getMenu()
+
+        dateProvider.formatter.changeFormat(to: .list)
+
+        let cellDay = dateProvider.formatter.string(from: selectDayInformation?.date ?? Date())
+
+        let selectedDayMenu = menu.filter { food in
+            let menuDay = dateProvider.formatter.string(from: food.date)
+
+            return menuDay == cellDay
+        }
+
+        selectDayFood = selectedDayMenu
+        popupView.collectionView.reloadData()
+        configure()
     }
 }
 
 // MARK: - UICollectionViewDelegate
 
-extension DayDetailViewController: UICollectionViewDelegate { }
+extension DayDetailViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let menuDetailViewController = MenuDetailViewController(food: selectDayFood?[indexPath.item])
+
+        menuDetailViewController.modalPresentationStyle = .formSheet
+        menuDetailViewController.delegate = self
+
+        self.present(menuDetailViewController, animated: true)
+    }
+}
 
 // MARK: - UICollectionViewDataSource
 
 extension DayDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return selectDayFood?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeue(cell: MenuListCell.self, for: indexPath)
+
+        cell.updateFood(food: selectDayFood?[indexPath.item])
+
         return cell
     }
 }

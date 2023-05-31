@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol ButtonStackViewDelegate: AnyObject {
+    func moveAddView()
+    func dismissCurrentView()
+}
+
 final class ButtonStackView: UIStackView {
     private let buttonFont = UIFont(name: "Pretendard-Regular", size: 14)
     private lazy var addButton = UIButton()
@@ -66,13 +71,4 @@ final class ButtonStackView: UIStackView {
     @objc private func didCloseButtonTouched(_ sender: UIButton) {
         delegate?.dismissCurrentView()
     }
-}
-
-protocol ButtonStackViewDelegate: AnyObject {
-    func moveAddView()
-    func dismissCurrentView()
-}
-
-final class AddMenuController: UIViewController {
-
 }

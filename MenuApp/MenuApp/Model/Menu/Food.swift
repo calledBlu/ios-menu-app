@@ -5,13 +5,16 @@
 //  Created by Blu on 2023/05/18.
 //
 
-import Foundation
+import UIKit
 
-struct Menu {
+struct Food {
+    let id: UUID
     var name: String
-    var category: FoodCategory
+    var category: Category?
+    var date: Date
+    var image: UIImage?
 
-    enum FoodCategory: CustomStringConvertible {
+    enum Category: Int, CustomStringConvertible {
         case korean
         case chinese
         case japanese

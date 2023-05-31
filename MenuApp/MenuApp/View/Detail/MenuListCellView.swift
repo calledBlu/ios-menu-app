@@ -8,6 +8,8 @@
 import UIKit
 
 final class MenuListCellView: UIView {
+    private var foodCoreDataManager = FoodCoreDataManager.shared
+
     private lazy var photo = UIImageView()
     private lazy var menuName = UILabel()
     private lazy var category = CircleView(frame: .zero)
@@ -23,6 +25,18 @@ final class MenuListCellView: UIView {
         super.init(coder: coder)
     }
 
+    func updateFoodCellView(food: Food) {
+        guard let image = food.image,
+              let foodCategory = food.category?.rawValue else {
+            return
+        }
+
+        photo.image = UIImage(data: image)
+        menuName.text = food.name
+        categoryLabel.text = Food.Category(rawValue: foodCategory)?.description
+        category.backgroundColor = .init(named: Food.Category(rawValue: foodCategory)?.color ?? "SubGray")
+    }
+
     private func configure() {
         configureUI()
         configureLayout()
@@ -36,8 +50,8 @@ final class MenuListCellView: UIView {
         category.layer.cornerRadius = 15
 
         photo.image = UIImage(systemName: "photo.fill")
-        photo.contentMode = .scaleAspectFit
-        photo.backgroundColor = .cyan
+        photo.contentMode = .scaleAspectFill
+        photo.clipsToBounds = true
 
         menuName.text = "맛있는 코드"
         menuName.textAlignment = .natural
@@ -47,6 +61,7 @@ final class MenuListCellView: UIView {
 
         categoryLabel.text = "한식"
         categoryLabel.textAlignment = .center
+        categoryLabel.textColor = .white
         categoryLabel.font = UIFont(name: "Pretendard-Regular", size: 12)
     }
 

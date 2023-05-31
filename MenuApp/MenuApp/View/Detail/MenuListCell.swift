@@ -8,6 +8,9 @@
 import UIKit
 
 final class MenuListCell: UICollectionViewCell {
+
+    private var food: Food?
+
     private lazy var menuListCellView = MenuListCellView(frame: .zero)
 
     override init(frame: CGRect) {
@@ -21,12 +24,22 @@ final class MenuListCell: UICollectionViewCell {
         super.init(coder: coder)
     }
 
-    func configureLayout() {
+    private func configureLayout() {
         NSLayoutConstraint.activate([
             menuListCellView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             menuListCellView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             menuListCellView.topAnchor.constraint(equalTo: self.topAnchor),
             menuListCellView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
+    }
+
+    func updateFood(food: Food?) {
+        self.food = food
+
+        guard let updatedFood = food else {
+            return
+        }
+
+        menuListCellView.updateFoodCellView(food: updatedFood)
     }
 }

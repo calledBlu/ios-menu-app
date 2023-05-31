@@ -15,22 +15,15 @@ final class DateProvider: DateProvidable {
     private var monthMetaData: MonthMetadata?
 
     let calendar: Calendar
-    let titleDateFormatter: DateFormatter
-    let dayDateFormatter: DateFormatter
-    let detailTitleDateFormatter: DateFormatter
+    let formatter: DateFormatter
     let selectedDate = Date()
 
     // MARK: - Initialization
 
     init() {
         self.calendar = Calendar(identifier: .gregorian)
-        self.titleDateFormatter = DateFormatter()
-        self.dayDateFormatter = DateFormatter()
-        self.detailTitleDateFormatter = DateFormatter()
-
-        self.titleDateFormatter.dateFormat = CalendarDateFormat.yearAndMonth.format
-        self.dayDateFormatter.dateFormat = CalendarDateFormat.day.format
-        self.detailTitleDateFormatter.dateFormat = CalendarDateFormat.monthAndDay.format
+        self.formatter = DateFormatter()
+        self.formatter.setLocaleKoKr()
     }
 
     // MARK: - Public Methods
@@ -49,6 +42,10 @@ final class DateProvider: DateProvidable {
 
     func sendCurrentCalendarDate() -> Date {
         return menuCalendar.calendarDate
+    }
+
+    func sendMonthDate() -> Date? {
+        return monthMetaData?.month
     }
 
     func updateCalendarDate(_ date: Date?) {
