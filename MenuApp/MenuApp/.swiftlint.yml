@@ -1,0 +1,8 @@
+disabled_rules:
+    - force_cast
+    - for_where
+    - empty_string
+
+opt_in_rules:
+    - empty_count
+    - empty_string
