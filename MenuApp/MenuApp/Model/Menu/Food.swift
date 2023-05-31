@@ -5,16 +5,16 @@
 //  Created by Blu on 2023/05/18.
 //
 
-import UIKit
+import Foundation
 
 struct Food {
     let id: UUID
     var name: String
     var category: Category?
     var date: Date
-    var image: UIImage?
+    var image: Data?
 
-    enum Category: Int, CustomStringConvertible {
+    enum Category: Int, CustomStringConvertible, CaseIterable {
         case korean
         case chinese
         case japanese
@@ -33,6 +33,21 @@ struct Food {
                 return "양식"
             case .fusion:
                 return "퓨전"
+            }
+        }
+
+        var color: String {
+            switch self {
+            case .korean:
+                return "CategoryPink"
+            case .chinese:
+                return "CategoryOrange"
+            case .japanese:
+                return "CategoryGray"
+            case .western:
+                return "CategoryDarkGray"
+            case .fusion:
+                return "CategoryCoral"
             }
         }
     }

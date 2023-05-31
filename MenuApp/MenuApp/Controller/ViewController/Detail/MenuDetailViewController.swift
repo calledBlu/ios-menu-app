@@ -14,25 +14,31 @@ protocol MenuDetailViewControllerDelegate: AnyObject {
 class MenuDetailViewController: UIViewController, UINavigationControllerDelegate {
 
     // MARK: - Properties
+
     private var foodCoreDataManager = FoodCoreDataManager.shared
     private var food: Food?
     private let categoryList = Food.Category.allCases
     private var foodCategory: Food.Category?
     private var tapGestureRecognizer = UITapGestureRecognizer()
+
     var delegate: MenuDetailViewControllerDelegate?
 
     // MARK: - UI Components
+
     private lazy var menuImageView = UIImageView()
     private lazy var navigationBar = UINavigationBar()
 
     private lazy var menuTitle = UILabel()
     private lazy var categoryTitle = UILabel()
     private lazy var menuTextField = UITextField()
+    private lazy var categoryTextField = UITextField()
     private lazy var categoryLabel = UILabel()
-
+    
+    private lazy var categoryPicker = UIPickerView()
     private lazy var imagePicker = UIImagePickerController()
 
     // MARK: - Initialization
+
     convenience init(food: Food?) {
         self.init(nibName: nil, bundle: nil)
 
@@ -44,15 +50,79 @@ class MenuDetailViewController: UIViewController, UINavigationControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+
+        categoryPicker.dataSource = self
+        categoryPicker.delegate = self
+    }
+}
+
+// MARK: - UIPickerViewDataSource
+
+extension MenuDetailViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
 
-    // MARK: - Public Methods
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categoryList.count
+    }
+}
 
-    // MARK: - Private Methods
+// MARK: - UIPickerViewDelegate
 
+extension MenuDetailViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+
+        return Food.Category(rawValue: row)?.description
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        foodCategory = categoryList[row]
+        categoryTextField.text = foodCategory?.description
+    }
+
+    func pickerView(_ pickerView: UIPickerView,
+                    viewForRow row: Int,
+                    forComponent component: Int,
+                    reusing view: UIView?) -> UIView {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
+
+        let categoryLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
+        categoryLabel.text = Food.Category(rawValue: row)?.description
+        categoryLabel.font = UIFont(name: "Pretendard-Regular", size: 14)
+        categoryLabel.textAlignment = .center
+
+        view.addSubview(categoryLabel)
+
+        return view
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+
+extension MenuDetailViewController: UIImagePickerControllerDelegate {
+    func openImagePicker() {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = false
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        dismiss(animated: true, completion: nil)
+        if let image = info[.originalImage] as? UIImage {
+            self.menuImageView.image = image
+        }
+
+        view.bringSubviewToFront(menuImageView)
+    }
 }
 
 // MARK: - UI & Layout
+
 extension MenuDetailViewController {
     private func setup() {
         setUI()
@@ -67,7 +137,8 @@ extension MenuDetailViewController {
         view.addSubview(menuTitle)
         view.addSubview(categoryTitle)
         view.addSubview(menuTextField)
-        view.addSubview(categoryLabel)
+//        view.addSubview(categoryLabel)
+        view.addSubview(categoryTextField)
 
         configureMenuImageView()
         configureNavigationBar()
@@ -81,7 +152,7 @@ extension MenuDetailViewController {
         menuTitle.translatesAutoresizingMaskIntoConstraints = false
         categoryTitle.translatesAutoresizingMaskIntoConstraints = false
         menuTextField.translatesAutoresizingMaskIntoConstraints = false
-        categoryLabel.translatesAutoresizingMaskIntoConstraints = false
+        categoryTextField.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             navigationBar.topAnchor.constraint(equalTo: view.topAnchor),
@@ -98,9 +169,11 @@ extension MenuDetailViewController {
 
             categoryTitle.leadingAnchor.constraint(equalTo: menuImageView.leadingAnchor),
             categoryTitle.topAnchor.constraint(equalTo: menuTitle.bottomAnchor, constant: 24),
+            categoryTitle.trailingAnchor.constraint(equalTo: menuImageView.centerXAnchor, constant: -100),
 
-            categoryLabel.leadingAnchor.constraint(equalTo: categoryTitle.trailingAnchor),
-            categoryLabel.centerYAnchor.constraint(equalTo: categoryTitle.centerYAnchor),
+            categoryTextField.leadingAnchor.constraint(equalTo: categoryTitle.trailingAnchor),
+            categoryTextField.centerYAnchor.constraint(equalTo: categoryTitle.centerYAnchor),
+            categoryTextField.trailingAnchor.constraint(equalTo: menuTextField.trailingAnchor),
 
             menuTextField.leadingAnchor.constraint(equalTo: categoryTitle.trailingAnchor),
             menuTextField.centerYAnchor.constraint(equalTo: menuTitle.centerYAnchor),
@@ -125,9 +198,13 @@ extension MenuDetailViewController {
 
         menuTextField.text = food?.name
         menuTextField.font = UIFont(name: "Pretendard-Regular", size: 14)
+        menuTextField.borderStyle = .roundedRect
 
-        categoryLabel.text = food?.category?.description
-        categoryLabel.font = UIFont(name: "Pretendard-Regular", size: 14)
+        categoryTextField.text = food?.category?.description
+        categoryTextField.font = UIFont(name: "Pretendard-Regular", size: 14)
+        categoryTextField.borderStyle = .roundedRect
+        categoryTextField.inputView = categoryPicker
+        categoryTextField.tintColor = .clear
 
         guard let foodPhoto = food?.image else {
             return
@@ -153,9 +230,9 @@ extension MenuDetailViewController {
         navigationItem.setRightBarButton(saveButtonItem, animated: true)
 
         let deleteButtonItem = UIBarButtonItem(title: "삭제",
-                                             style: .plain,
-                                             target: self,
-                                             action: #selector(didDeleteButtonTouch))
+                                               style: .plain,
+                                               target: self,
+                                               action: #selector(didDeleteButtonTouch))
 
         navigationItem.setLeftBarButton(deleteButtonItem, animated: true)
 
@@ -164,8 +241,6 @@ extension MenuDetailViewController {
     }
 
     @objc func didSaveButtonTouch() {
-        // 사진, 카테고리, 이름 다른지 체크 후 다르면 생성하고 업데이트 하는 코드 넣기
-
         guard let food = food else {
             return
         }
@@ -173,13 +248,14 @@ extension MenuDetailViewController {
         let menuPhoto = menuImageView.image?.pngData()
 
         if (food.name != menuTextField.text) || (food.category?.description != categoryLabel.text) || (food.image != menuPhoto) {
-            let updateFood = Food(id: food.id, name: menuTextField.text ?? "", date: food.date, image: menuPhoto)
+            let updateFood = Food(id: food.id, name: menuTextField.text ?? "", category: foodCategory, date: food.date, image: menuPhoto)
             foodCoreDataManager.updateFood(updateFood)
         }
 
         delegate?.refreshAfterDelete()
         self.dismiss(animated: true)
     }
+
     @objc func didDeleteButtonTouch() {
         guard let food = food else {
             return
@@ -188,63 +264,5 @@ extension MenuDetailViewController {
         foodCoreDataManager.deleteFood(food)
         delegate?.refreshAfterDelete()
         self.dismiss(animated: true)
-    }
-}
-
-extension MenuDetailViewController: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return categoryList.count
-    }
-}
-
-extension MenuDetailViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-
-        return Food.Category(rawValue: row)?.description
-    }
-
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        foodCategory = categoryList[row]
-    }
-
-    func pickerView(_ pickerView: UIPickerView,
-                    viewForRow row: Int,
-                    forComponent component: Int,
-                    reusing view: UIView?) -> UIView {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
-
-        let categoryLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
-        categoryLabel.text = Food.Category(rawValue: row)?.description
-        categoryLabel.font = UIFont(name: "Pretendard-Regular", size: 14)
-        categoryLabel.textAlignment = .center
-
-        view.addSubview(categoryLabel)
-
-        return view
-    }
-}
-
-extension MenuDetailViewController: UIImagePickerControllerDelegate {
-    func openImagePicker() {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            imagePicker.delegate = self
-            imagePicker.sourceType = .photoLibrary
-            imagePicker.allowsEditing = false
-            present(imagePicker, animated: true, completion: nil)
-        }
-    }
-
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        dismiss(animated: true, completion: nil)
-        if let image = info[.originalImage] as? UIImage {
-            self.menuImageView.image = image
-        }
-
-        view.bringSubviewToFront(menuImageView)
     }
 }

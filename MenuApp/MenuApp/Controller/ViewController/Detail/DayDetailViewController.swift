@@ -15,16 +15,16 @@ final class DayDetailViewController: UIViewController {
 
     // MARK: - Properties
 
-    private let dateProvider = DateProvider()
     private var selectDayInformation: Day?
     private var foodCoreDataManager = FoodCoreDataManager.shared
     private var selectDayFood: [Food]?
-    private var tapGestureRecognizer = UITapGestureRecognizer()
+    private let dateProvider = DateProvider()
     var delegate: DayDetailViewControllerDelegate?
 
     // MARK: - UI Components
 
     private lazy var popupView = PopupView(frame: .zero)
+    private var tapGestureRecognizer = UITapGestureRecognizer()
 
     // MARK: - Initialization
 
@@ -91,6 +91,8 @@ final class DayDetailViewController: UIViewController {
     }
 }
 
+// MARK: - ButtonStackViewDelegate
+
 extension DayDetailViewController: ButtonStackViewDelegate {
     func moveAddView() {
         let addMenuViewController = AddMenuViewController(menuDate: selectDayInformation?.date
@@ -107,6 +109,8 @@ extension DayDetailViewController: ButtonStackViewDelegate {
         dismiss(animated: false)
     }
 }
+
+// MARK: - MenuDetailViewControllerDelegate
 
 extension DayDetailViewController: MenuDetailViewControllerDelegate {
     func refreshAfterDelete() {
