@@ -11,6 +11,8 @@ final class MenuTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setAuthorification()
+
         viewControllers = [
             createTabBarItem(tabBarTitle: ViewCategory.list.barTitle,
                              tabBarImage: ViewCategory.list.imageName,
@@ -24,6 +26,16 @@ final class MenuTabBarController: UITabBarController {
         ]
 
         configureTabBar()
+    }
+
+    func setAuthorification() {
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { (_, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+        }
     }
 
     private func configureTabBar() {
