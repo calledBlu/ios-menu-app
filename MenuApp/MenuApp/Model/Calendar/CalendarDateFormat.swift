@@ -11,6 +11,7 @@ enum CalendarDateFormat {
     case yearAndMonth
     case day
     case monthAndDay
+    case list
 
     var format: String {
         switch self {
@@ -20,6 +21,8 @@ enum CalendarDateFormat {
             return "d"
         case .monthAndDay:
             return "MM월 dd일 EEEE"
+        case .list:
+            return "YYYY년 MM월 dd일"
         }
     }
 }

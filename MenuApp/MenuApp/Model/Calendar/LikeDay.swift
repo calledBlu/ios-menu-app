@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+struct LikeDay: Comparable {
+    let date: Date
+
+    static func < (lhs: LikeDay, rhs: LikeDay) -> Bool {
+        return lhs.date < rhs.date
+    }
+
+    static func > (lhs: LikeDay, rhs: LikeDay) -> Bool {
+        return lhs.date > rhs.date
+    }
+}

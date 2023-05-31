@@ -11,4 +11,5 @@ struct MonthMetadata {
     let numberOfDays: Int
     let firstDay: Date
     let firstWeekday: Int
+    let month: Date
 }

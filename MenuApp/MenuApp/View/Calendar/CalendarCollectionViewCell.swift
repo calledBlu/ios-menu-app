@@ -8,9 +8,11 @@
 import UIKit
 
 final class CalendarCollectionViewCell: UICollectionViewCell {
-    var dayOfCell: Day? {
+    private var dayOfCell: Day? {
         didSet {
-            guard let day = dayOfCell else { return }
+            guard let day = dayOfCell else {
+                return
+            }
 
             dayLabel.text = day.number
             configureCalendarCell()
@@ -37,6 +39,27 @@ final class CalendarCollectionViewCell: UICollectionViewCell {
         configureCalendarCell()
     }
 
+    func checkIsFavorite(likeDays: [LikeDay]?) {
+        let dateformatter = DateFormatter()
+        dateformatter.changeFormat(to: .list)
+
+        guard let dateOfCell = dayOfCell?.date,
+              let likeDays = likeDays,
+              let isInThisMonth = dayOfCell?.isWithinDisplayedMonth else {
+            return
+        }
+
+        let formattedDay = dateformatter.string(from: dateOfCell)
+
+        likeDays.forEach { likeDay in
+            let formattedLikeDay = dateformatter.string(from: likeDay.date)
+            if formattedDay == formattedLikeDay {
+                likeIcon.alpha = isInThisMonth ? 1.0 : 0.5
+                return
+            }
+        }
+    }
+
     func changeIsSelectStatus() {
         dayLabel.textColor = .white
         self.backgroundView?.alpha = 1.0
@@ -48,7 +71,6 @@ final class CalendarCollectionViewCell: UICollectionViewCell {
             dayLabel.textColor = .init(named: "MainBlack")
         } else {
             dayLabel.textColor = .init(named: "SubDayGray")
-
         }
     }
 
@@ -94,13 +116,9 @@ final class CalendarCollectionViewCell: UICollectionViewCell {
             dayLabel.textColor = UIColor.init(named: "MainBlack")
         } else {
             dayLabel.textColor = UIColor.init(named: "SubDayGray")
-            likeIcon.tintColor = .clear
         }
 
-        if day.isFavorite == true {
-            likeIcon.tintColor = UIColor.init(named: "MainOrange")
-        } else {
-            likeIcon.tintColor = .clear
-        }
+        likeIcon.tintColor = UIColor.init(named: "MainOrange")
+        likeIcon.alpha = 0.0
     }
 }
