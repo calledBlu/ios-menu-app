@@ -16,7 +16,6 @@ protocol CalendarTitleStackViewDelegate: AnyObject {
 final class CalendarTitleStackView: RoundedStackView {
     var delegate: CalendarTitleStackViewDelegate?
 
-
     private lazy var previousButton = UIButton(systemName: "chevron.left")
     private lazy var nextButton = UIButton(systemName: "chevron.right")
     private lazy var title = UILabel()

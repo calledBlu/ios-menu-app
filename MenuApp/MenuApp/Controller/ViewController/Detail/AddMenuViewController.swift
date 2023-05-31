@@ -34,10 +34,9 @@ class AddMenuViewController: UIViewController, UINavigationControllerDelegate {
     private lazy var menuTextField = UITextField()
     private lazy var categoryTextField = UITextField()
     private lazy var categoryPicker = UIPickerView()
-    
+
     private lazy var imagePicker = UIImagePickerController()
     private var tapGestureRecognizer = UITapGestureRecognizer()
-
 
     // MARK: - Initialization
 

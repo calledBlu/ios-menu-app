@@ -33,7 +33,7 @@ class MenuDetailViewController: UIViewController, UINavigationControllerDelegate
     private lazy var menuTextField = UITextField()
     private lazy var categoryTextField = UITextField()
     private lazy var categoryLabel = UILabel()
-    
+
     private lazy var categoryPicker = UIPickerView()
     private lazy var imagePicker = UIImagePickerController()
 

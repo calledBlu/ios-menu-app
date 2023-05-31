@@ -17,14 +17,14 @@ extension UNUserNotificationCenter {
         dateComponents.calendar = Calendar.current
         dateComponents.hour = alert.hour
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        
+
         let uuidString = alert.kind.description
         let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
 
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.add(request) { (error) in
             if error != nil {
-                print(error)
+                print(error as Any)
             }
         }
     }
