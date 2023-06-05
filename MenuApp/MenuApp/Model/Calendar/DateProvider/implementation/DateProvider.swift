@@ -13,7 +13,7 @@ final class DateProvider: DateProvidable {
 
     let calendar: Calendar
     let formatter: DateFormatter
-    let selectedDate = Date()
+    var selectedDate = Date()
 
     init() {
         self.calendar = Calendar(identifier: .gregorian)

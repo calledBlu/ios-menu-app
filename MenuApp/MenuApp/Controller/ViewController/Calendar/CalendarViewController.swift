@@ -40,6 +40,7 @@ final class CalendarViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         likeDays = likeDayCoreDataManager.getLikeDays()
         dateProvider.updateCalendarDate(Date())
+        dateProvider.selectedDate = Date()
         updateCalendar()
         collectionView.reloadData()
     }
@@ -158,6 +159,7 @@ extension CalendarViewController: UICollectionViewDelegate {
         }
 
         let daysInMonth = dateProvider.sendDaysInMonth()
+        dateProvider.selectedDate = daysInMonth[indexPath.item].date
 
         if let cell = collectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell {
             cell.changeIsSelectStatus()
