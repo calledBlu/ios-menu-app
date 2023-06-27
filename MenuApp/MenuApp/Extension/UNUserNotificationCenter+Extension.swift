@@ -18,7 +18,7 @@ extension UNUserNotificationCenter {
         dateComponents.hour = alert.hour
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
 
-        // Alert 테스트를 위해 2초 뒤에 Alert이 뜨도록 하는 테스트용 코드
+//         Alert 테스트를 위해 2초 뒤에 Alert이 뜨도록 하는 테스트용 코드
 //        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
 
         let uuidString = alert.kind.description
