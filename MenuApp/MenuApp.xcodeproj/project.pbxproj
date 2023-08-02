@@ -215,10 +215,7 @@
 		F02F08702A15FB600020E2D2 = {
 			isa = PBXGroup;
 			children = (
-				F0443C612A2278BA00C57324 /* LikeDayMO+CoreDataClass.swift */,
-				F0443C622A2278BA00C57324 /* LikeDayMO+CoreDataProperties.swift */,
-				F03C24632A20DB4400F5B6F6 /* FoodMO+CoreDataClass.swift */,
-				F03C24642A20DB4400F5B6F6 /* FoodMO+CoreDataProperties.swift */,
+				F0D7FE462A79DF1900C68AAF /* CoreData */,
 				F02F087B2A15FB600020E2D2 /* MenuApp */,
 				F02F08922A15FB610020E2D2 /* MenuAppTests */,
 				F02F087A2A15FB600020E2D2 /* Products */,
@@ -416,6 +413,17 @@
 				F0EEDA0A2A1EF7BC00899AFB /* Pretendard-Thin.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		F0D7FE462A79DF1900C68AAF /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F0443C612A2278BA00C57324 /* LikeDayMO+CoreDataClass.swift */,
+				F0443C622A2278BA00C57324 /* LikeDayMO+CoreDataProperties.swift */,
+				F03C24632A20DB4400F5B6F6 /* FoodMO+CoreDataClass.swift */,
+				F03C24642A20DB4400F5B6F6 /* FoodMO+CoreDataProperties.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		F0DE88D82A27633E00DD682D /* Launch */ = {
